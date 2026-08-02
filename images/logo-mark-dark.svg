@@ -1,0 +1,19 @@
+<!-- STEM Begins Here — "Rocket Hex" emblem. Variant for DARK backgrounds. -->
+<svg width="84" height="92" viewBox="0 0 84 92" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="STEM Begins Here">
+  <!-- hex (bolt head) -->
+  <path d="M42 4 L78.37 25 L78.37 67 L42 88 L5.63 67 L5.63 25 Z" fill="#F5F1E8"/>
+  <!-- rocket body -->
+  <path d="M42 12 C47.5 18 49 26 47 37 L37 37 C35 26 36.5 18 42 12 Z" fill="#0B1F3A"/>
+  <!-- window -->
+  <circle cx="42" cy="24" r="3.4" fill="#F5F1E8"/>
+  <!-- fins -->
+  <path d="M37.5 33 L31 42 L37.5 40 Z" fill="#0B1F3A"/>
+  <path d="M46.5 33 L53 42 L46.5 40 Z" fill="#0B1F3A"/>
+  <!-- copper flame (single accent) -->
+  <path d="M39 41 L45 41 L42 50 Z" fill="#C6702A"/>
+  <!-- open book launchpad -->
+  <path d="M20 52 C27 48.5 35 48 42 51.5 C49 48 57 48.5 64 52 L64 68 C57 64.5 49 65 42 68.5 C35 65 27 64.5 20 68 Z" fill="#0B1F3A"/>
+  <path d="M42 51.5 L42 68.5" stroke="#F5F1E8" stroke-width="2.2"/>
+  <!-- page lines -->
+  <path d="M26 56.5 C31 54.5 36 54.6 38.5 55.8 M26 61.5 C31 59.5 36 59.6 38.5 60.8 M58 56.5 C53 54.5 48 54.6 45.5 55.8 M58 61.5 C53 59.5 48 59.6 45.5 60.8" fill="none" stroke="#F5F1E8" stroke-width="1.7" stroke-linecap="round"/>
+</svg>

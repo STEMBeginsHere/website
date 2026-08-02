@@ -1,0 +1,13 @@
+<!--
+  Favicon: app-icon lockup per the logo spec — emblem in paper on navy,
+  corner radius ~22% of icon size. Simplified for small sizes: the spec says
+  drop the book and fins at <=24px, keeping hex + rocket body + copper flame.
+-->
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="14" fill="#0B1F3A"/>
+  <g transform="translate(11 6) scale(0.5)">
+    <path d="M42 4 L78.37 25 L78.37 67 L42 88 L5.63 67 L5.63 25 Z" fill="#F5F1E8"/>
+    <path d="M42 18 C48 25 49.5 34 47.5 46 L36.5 46 C34.5 34 36 25 42 18 Z" fill="#0B1F3A"/>
+    <path d="M37 52 L47 52 L42 66 Z" fill="#C6702A"/>
+  </g>
+</svg>
