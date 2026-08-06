@@ -488,9 +488,6 @@ strong { font-weight: 600; }
 .btn[disabled] { opacity: 0.6; cursor: not-allowed; }
 .btn[disabled]:active { transform: none; }
 
-/* Text link with arrow, for in-section navigation. */
-
-.surface--paper 
 /* --------------------------------------------------------------------------
    07 / HERO
    -------------------------------------------------------------------------- */
@@ -714,8 +711,6 @@ strong { font-weight: 600; }
 }
 .surface--paper .card--accent::before { background: var(--copper); }
 
-.surface--paper 
-.surface--paper 
 /* --------------------------------------------------------------------------
    10 / TAG PILLS
    -------------------------------------------------------------------------- */
