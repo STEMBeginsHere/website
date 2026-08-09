@@ -85,6 +85,7 @@
   --max-width: 1140px;
   --gutter: 24px;
   --grid-rule: 72px;        /* vertical drafting rule spacing */
+  --header-h: 63px;         /* .site-header's rendered height, kept in sync below */
 
   --ease: cubic-bezier(0.2, 0.6, 0.25, 1);
 }
@@ -533,11 +534,18 @@ strong { font-weight: 600; }
   );
 }
 
-.hero > .container { position: relative; z-index: 1; }
+/* min-width: 0 overrides the flex item default of min-width: auto, which
+   would otherwise stop this from shrinking below the two-column grid's
+   content width and blow out .hero--home's flex layout horizontally. */
+.hero > .container { position: relative; z-index: 1; min-width: 0; }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  /* minmax(0, …) instead of a bare fr: fr tracks default to a min size of
+     their content's min-content width, which — now that .hero--home makes
+     this grid a flex item too — was enough to blow both layers out
+     horizontally on narrow screens. */
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: clamp(var(--s-7), 5vw, var(--s-8));
   align-items: center;
 }
@@ -551,6 +559,16 @@ strong { font-weight: 600; }
   flex-wrap: wrap;
   gap: var(--s-3);
   margin-top: var(--s-7);
+}
+
+/* Homepage hero: fill the viewport below the sticky header on first load,
+   on any device, instead of sizing to content alone. min-height (not height)
+   lets it grow past 100% when the stacked mobile layout needs more room. */
+.hero--home {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100svh - var(--header-h));
 }
 
 /* Compact hero for interior pages. */
@@ -635,6 +653,13 @@ strong { font-weight: 600; }
 
 .hero-panel-figure svg { width: 100%; max-width: 300px; height: auto; }
 
+.hero-panel-figure img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: var(--r-card);
+}
+
 /* The signal pulse traveling sensor -> board -> output. */
 .pulse-path {
   stroke-dasharray: 5 7;
@@ -661,6 +686,8 @@ strong { font-weight: 600; }
   color: var(--muted-dark);
   text-align: center;
 }
+
+.hero-panel-legend--single { grid-template-columns: 1fr; }
 
 /* --------------------------------------------------------------------------
    09 / GRIDS + CARDS
@@ -1361,6 +1388,8 @@ strong { font-weight: 600; }
 }
 
 @media (max-width: 760px) {
+  :root { --header-h: 72px; } /* the hamburger button is taller than the wordmark lockup */
+
   .nav-toggle { display: block; }
 
   .nav-links {
