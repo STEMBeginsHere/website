@@ -13,7 +13,12 @@
   <meta property="og:title" content="STEM Begins Here — Hands-On Hardware Engineering for Grades 6–12" />
   <meta property="og:description" content="A three-day hardware engineering bootcamp run in your classroom. We bring the kits, the curriculum, and the instructors." />
   <meta property="og:url" content="https://stembeginshere.org/" />
+  <meta property="og:image" content="https://stembeginshere.org/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="STEM Begins Here — a free, three-day hands-on hardware engineering bootcamp for grades 6–12." />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://stembeginshere.org/images/og-image.png" />
   <meta name="theme-color" content="#06101f" />
 
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
@@ -26,7 +31,7 @@
   {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    "name": "STEM Begins Here",
+    "name": "STEMBeginsHere",
     "url": "https://stembeginshere.org/",
     "email": "stembeginshere@gmail.com",
     "description": "An Arizona nonprofit corporation running hands-on hardware engineering bootcamps for students in grades 6 to 12.",
@@ -42,7 +47,7 @@
   <!-- ============ SHARED HEADER — keep identical on every page ============ -->
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <a href="index.html" class="nav-brand" aria-label="STEM Begins Here — home">
+      <a href="index.html" class="nav-brand" aria-label="STEMBeginsHere — home">
         <svg viewBox="0 0 84 92" aria-hidden="true" focusable="false">
           <path d="M42 4 L78.37 25 L78.37 67 L42 88 L5.63 67 L5.63 25 Z" fill="#F5F1E8"/>
           <path d="M42 12 C47.5 18 49 26 47 37 L37 37 C35 26 36.5 18 42 12 Z" fill="#0B1F3A"/>
@@ -55,8 +60,8 @@
           <path d="M26 56.5 C31 54.5 36 54.6 38.5 55.8 M26 61.5 C31 59.5 36 59.6 38.5 60.8 M58 56.5 C53 54.5 48 54.6 45.5 55.8 M58 61.5 C53 59.5 48 59.6 45.5 60.8" fill="none" stroke="#F5F1E8" stroke-width="1.7" stroke-linecap="round"/>
         </svg>
         <span class="nav-brand-text">
-          <span class="nav-brand-name">STEM Begins Here</span>
-          <span class="nav-brand-sub">Hands-on hardware · Grades 6–12</span>
+          <span class="nav-brand-name">STEMBeginsHere</span>
+          <span class="nav-brand-sub">Hands-on hardware, brought to your classroom</span>
         </span>
       </a>
 
@@ -87,11 +92,9 @@
           <h1>Ten hours that turn a curious student into someone who builds things.</h1>
 
           <p class="lede">
-            We run a three-day hardware engineering bootcamp on site, wherever the students
-            already are. We bring the kits, the curriculum, and the instructors. They leave
-            having designed, wired, and programmed something that actually works.
+            We run a three-day hardware engineering bootcamp on site. 
+            We bring the kits, the curriculum, and the instructors.
           </p>
-
           <div class="hero-actions">
             <a href="program.html" class="btn btn-primary">
               See how it works <span class="btn-arrow" aria-hidden="true">&rarr;</span>
@@ -100,9 +103,8 @@
           </div>
 
           <div class="trust-line">
-            <span class="trust-item"><span class="trust-dot"></span> Free, always</span>
+            <span class="trust-item"><span class="trust-dot"></span> Always Free</span>
             <span class="trust-item"><span class="trust-dot"></span> A kit for every student</span>
-            <span class="trust-item"><span class="trust-dot"></span> Built on Raspberry Pi Foundation material</span>
           </div>
         </div>
 
@@ -156,112 +158,48 @@
         <div class="section-head js-reveal">
           <h2>Most students never touch the hardware side of STEM.</h2>
           <p>
-            School computing has largely settled on software: block coding, then Python,
-            then maybe a robotics club with a fixed kit. The physical layer underneath,
-            where a sensor reading becomes a decision becomes a moving part, is where a lot
-            of students would actually catch fire. It is also the part that needs
-            equipment, a curriculum, and someone in the room who has wired a circuit
-            before.
+            School computing has largely settled on software: simple block, then Python, then maybe a robotics club with a fixed kit. But there’s a whole other side of computing that students rarely get to experience! 
+            The physical layer underneath, where a sensor reading triggers a decision and becomes a moving part, is where a lot of students would actually catch fire. 
+            It’s also the part that needs equipment, a curriculum, and someone in the room who has wired a circuit before. That’s why we’re here.
           </p>
         </div>
 
-        <div class="grid grid-3">
-          <div class="card js-reveal">
-            <h3>Equipment is the first wall</h3>
+        <ul class="line-list grid grid-3">
+          <li class="js-reveal">
+            <span class="line-list-label">Equipment is the first wall</span>
             <p>
-              Microcontrollers, breadboards, sensors, and motors add up. A kit that sits in
-              a closet between units is a hard line item to defend.
-            </p>
-          </div>
-          <div class="card js-reveal">
-            <h3>Then the expertise wall</h3>
-            <p>
-              Teaching physical computing well means debugging a dead circuit in front of
-              thirty students. That is a specific skill, and it is not in most computer
-              science certifications.
-            </p>
-          </div>
-          <div class="card card--accent js-reveal">
-            <h3>So the window closes</h3>
-            <p>
-              Students decide what they are good at long before they choose a major. If
-              nobody puts a breadboard in front of them in middle school, most never go
-              looking for one.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= THE PROGRAM ================= -->
-    <section class="section surface--dark">
-      <div class="container">
-        <div class="section-head js-reveal">
-          <h2>Three days. Ten hours. One thing they built themselves.</h2>
-          <p>
-            The structure is deliberately front-loaded: teach the fundamentals properly on
-            day one, then get out of the way. By day three every student is presenting
-            something that did not exist on Monday.
-          </p>
-        </div>
-
-        <ol class="timeline js-reveal">
-          <li>
-            <span class="timeline-date">Day 1 · 4 hours</span>
-            <h3>Intro to hardware engineering</h3>
-            <p>
-              What a computer actually is, framed as input, process, output. General-purpose
-              machines versus embedded systems. Then hands on the kit: the Raspberry Pi Pico,
-              how a breadboard carries current, lighting an LED, and a first program. We work
-              through every sensor and actuator, covering what it does, how it does it, and
-              where it shows up in the world students already know.
+              Microcontrollers, breadboards, sensors, and motors add up. 
+              For a school, a kit that sits in a closet between units is a hard line item to defend.
             </p>
           </li>
-          <li>
-            <span class="timeline-date">Day 2 · 4 hours</span>
-            <h3>Build your own project</h3>
+          <li class="js-reveal">
+            <span class="line-list-label">Then there’s the expertise</span>
             <p>
-              An hour of ideation, then open build time. Students design their own device and
-              wire it themselves. Instructors circulate constantly, but the rule for our team
-              is strict: guide students to the answer using what they already know, never
-              hand it to them. Anyone who finishes early extends the project or starts a
-              second one on the same board.
+              Teaching physical computing well means debugging a dead circuit in front of thirty students. 
+              That is a specific skill, and it is not in most computer science certifications.
             </p>
           </li>
-          <li>
-            <span class="timeline-date">Day 3 · 2 hours</span>
-            <h3>Showcase and awards</h3>
+          <li class="js-reveal line-list-item--accent">
+            <span class="line-list-label">So most students never get the chance</span>
             <p>
-              Every student demonstrates their build and explains their design decisions to
-              the room, followed by judging, awards, and a close-out. Presenting the thing
-              turns out to matter almost as much as building it.
+              Students decide what they are good at long before they choose a major. 
+              If nobody puts a breadboard in front of a student, they're unlikely to know whether they would enjoy working with one. 
+              We want to give them that chance. 
             </p>
           </li>
-        </ol>
-
-        <div class="js-reveal" style="margin-top: 56px;">
-          <p class="label" style="margin-bottom: 16px;">What they work with</p>
-          <div class="tag-row">
-            <span class="tag">Raspberry Pi Pico</span>
-            <span class="tag">Breadboards</span>
-            <span class="tag">Distance sensors</span>
-            <span class="tag">Servos &amp; motors</span>
-            <span class="tag">LEDs &amp; buttons</span>
-            <span class="tag">Jumper wiring</span>
-          </div>
-        </div>
+        </ul>
       </div>
     </section>
 
     <!-- ================= LOGISTICS ================= -->
     <section class="section surface--paper">
       <div class="container">
-        <div class="grid grid-2" style="gap: 56px; align-items: start;">
+        <div class="grid grid-2" style="gap: var(--s-8); align-items: start;">
           <div class="js-reveal">
             <h2>It takes less than you would think.</h2>
-            <p style="margin-top: 20px;">
-              A room, some outlets, and a group of students is close to the whole of it.
-              We deliberately kept it that way. The
+            <p style="margin-top: var(--s-5);">
+              A room, some outlets, and a group of students is close to the whole of it. 
+              We deliberately kept it that way. The 
               <a href="program.html">Program</a> page walks through the rest.
             </p>
           </div>
@@ -291,15 +229,15 @@
         </div>
       </div>
     </section>
-
+    
     <!-- ================= CTA ================= -->
     <section class="section surface--deep cta-band">
       <div class="container js-reveal">
-        <h2>We are booking our first sessions now.</h2>
+        <h2>Book your session today.</h2>
         <p>
-          We are early, and we would rather say so than pretend otherwise. It also means
-          the first groups through the door genuinely shape how this program runs. Tell us
-          about your students and your calendar, and we will take it from there.
+          We are striving to bring excellence to each school for STEM fields. The first
+          groups through the door will shape this program. Contact us with information
+          about your students and available dates, and we can do the rest.
         </p>
         <div class="hero-actions">
           <a href="get-involved.html" class="btn btn-primary">
@@ -329,11 +267,10 @@
               <path d="M42 51.5 L42 68.5" stroke="#F5F1E8" stroke-width="2.2"/>
               <path d="M26 56.5 C31 54.5 36 54.6 38.5 55.8 M26 61.5 C31 59.5 36 59.6 38.5 60.8 M58 56.5 C53 54.5 48 54.6 45.5 55.8 M58 61.5 C53 59.5 48 59.6 45.5 60.8" fill="none" stroke="#F5F1E8" stroke-width="1.7" stroke-linecap="round"/>
             </svg>
-            <span class="footer-brand-name">STEM Begins Here</span>
+            <span class="footer-brand-name">STEMBeginsHere</span>
           </div>
           <p>
-            A three-day hardware engineering bootcamp for grades 6 to 12, run on site.
-            It costs nothing.
+            Hands-on hardware, brought to your classroom.
           </p>
         </div>
 
@@ -353,14 +290,13 @@
           <ul>
             <!-- PLACEHOLDER: confirm this is a monitored inbox before launch. -->
             <li><a href="mailto:stembeginshere@gmail.com">stembeginshere@gmail.com</a></li>
-            <li><a href="get-involved.html">Host a session</a></li>
-            <li><a href="get-involved.html">Volunteer with us</a></li>
+            <li><a href="get-involved.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 STEM Begins Here</span>
+        <span>&copy; 2026 STEMBeginsHere</span>
         <span>An Arizona nonprofit</span>
       </div>
     </div>

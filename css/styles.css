@@ -232,9 +232,12 @@ strong { font-weight: 600; }
     transparent 1px,
     transparent var(--grid-rule)
   );
-  /* fade the rules out toward the bottom so they read as texture, not a table */
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%);
+  /* Fade the rules in from the top and out toward the bottom, so the grid
+     reads as texture breathing through the section rather than a table —
+     and so two stacked same-color surfaces taper to meet instead of one
+     cutting off mid-fade while the next snaps back to full strength. */
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 68%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 68%, transparent 100%);
 }
 
 .surface--dark,
@@ -411,12 +414,13 @@ strong { font-weight: 600; }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { background: var(--copper-lift); color: var(--navy) !important; }
 
+/* Padded to a 44px tap target rather than hugging the icon. */
 .nav-toggle {
   display: none;
   background: none;
   border: 1px solid var(--line-dark-strong);
   border-radius: var(--r-input);
-  padding: 9px 10px;
+  padding: 12px;
   cursor: pointer;
 }
 
@@ -429,11 +433,11 @@ strong { font-weight: 600; }
   transition: transform 0.25s var(--ease), opacity 0.2s var(--ease);
 }
 
-.nav-toggle-bar + .nav-toggle-bar { margin-top: 5px; }
+.nav-toggle-bar + .nav-toggle-bar { margin-top: 6px; }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) { opacity: 0; }
-.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* --------------------------------------------------------------------------
    06 / BUTTONS
@@ -712,13 +716,13 @@ strong { font-weight: 600; }
 .surface--paper .card--accent::before { background: var(--copper); }
 
 /* --------------------------------------------------------------------------
-   10 / TAG PILLS
+   10 / TAG LIST
    -------------------------------------------------------------------------- */
 
 .tag-row {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s-3);
+  gap: var(--s-2) var(--s-6);
 }
 
 .tag {
@@ -729,16 +733,58 @@ strong { font-weight: 600; }
   font-size: 0.8rem;
   letter-spacing: 0.06em;
   color: var(--ink-dark);
-  border: 1px solid var(--line-copper);
-  background: var(--fill-copper);
-  border-radius: var(--r-pill);
-  padding: 9px 18px;
 }
 
 .tag::before { content: "\25B8"; color: var(--copper); }
 
 .surface--paper .tag { color: var(--ink-paper); }
 .surface--paper .tag::before { color: var(--copper-ink); }
+
+/* --------------------------------------------------------------------------
+   10b / LINE LIST — horizontal, rule-divided alternative to boxed cards.
+   Use when items sit side by side but don't need visual separation as
+   distinct "objects" (see spec-list for the vertical equivalent).
+   -------------------------------------------------------------------------- */
+
+.line-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line-paper);
+}
+
+.line-list li {
+  padding: var(--s-6) var(--s-5) 0;
+  border-left: 1px solid var(--line-paper);
+}
+
+.line-list li:first-child { border-left: none; padding-left: 0; }
+.line-list li:last-child { padding-right: 0; }
+
+.surface--dark .line-list,
+.surface--deep .line-list { border-color: var(--line-dark); }
+.surface--dark .line-list li,
+.surface--deep .line-list li { border-color: var(--line-dark); }
+
+.line-list-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-paper);
+  margin-bottom: var(--s-3);
+}
+
+.surface--dark .line-list-label,
+.surface--deep .line-list-label { color: var(--ink-dark); }
+
+.line-list-item--accent .line-list-label { color: var(--copper-ink); }
+.surface--dark .line-list-item--accent .line-list-label,
+.surface--deep .line-list-item--accent .line-list-label { color: var(--copper); }
+
+.line-list p { font-size: 0.98rem; }
 
 /* --------------------------------------------------------------------------
    11 / TIMELINE
@@ -1070,6 +1116,12 @@ strong { font-weight: 600; }
   color: var(--ink-dark);
 }
 
+/* Caret swaps to the light ink so it stays legible on a dark input fill. */
+.surface--dark .form-row select,
+.surface--deep .form-row select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' stroke='%23EAF1FB' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
 .form-row input::placeholder,
 .form-row textarea::placeholder { color: var(--muted-paper); opacity: 0.7; }
 
@@ -1187,18 +1239,19 @@ strong { font-weight: 600; }
 .site-footer {
   background: var(--navy-deep);
   color: var(--muted-dark);
-  padding-block: var(--s-8) var(--s-6);
+  padding-block: var(--s-6) var(--s-4);
   border-top: 1px solid var(--line-dark);
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr;
-  gap: var(--s-7);
-  padding-bottom: var(--s-7);
+  gap: var(--s-5);
+  padding-bottom: var(--s-5);
+  align-items: start;
 }
 
-.footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: var(--s-4); }
+.footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: var(--s-3); }
 .footer-brand svg { width: 34px; height: 37px; flex-shrink: 0; }
 .footer-brand-name {
   font-family: var(--font-wordmark);
@@ -1220,15 +1273,22 @@ strong { font-weight: 600; }
   line-height: 1.4;
   text-transform: uppercase;
   color: var(--ink-dark);
-  margin-bottom: var(--s-4);
+  margin-bottom: var(--s-3);
 }
 
-.footer-grid ul { list-style: none; display: grid; gap: 2px; }
+/* Links flow inline and wrap, so a five-item list reads as one or two short
+   lines instead of stacking into a tall column. */
+.footer-grid ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--s-4);
+  row-gap: 0;
+}
 
-/* Padded out to a comfortable target rather than the 24px AA minimum. */
 .footer-grid a {
   display: inline-block;
-  padding-block: 9px;
+  padding-block: 5px;
   color: var(--muted-dark);
   font-size: 0.94rem;
 }
@@ -1236,7 +1296,7 @@ strong { font-weight: 600; }
 
 .footer-bottom {
   border-top: 1px solid var(--line-dark);
-  padding-top: var(--s-5);
+  padding-top: var(--s-3);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -1282,6 +1342,22 @@ strong { font-weight: 600; }
   :root { --grid-rule: 56px; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .nav-links { gap: var(--s-5); }
+  /* The tagline is the first thing to go under pressure — without it the
+     nav row has enough room down to the hamburger breakpoint. */
+  .nav-brand-sub { display: none; }
+
+  .line-list {
+    grid-template-columns: 1fr;
+    border-top: none;
+  }
+  .line-list li {
+    border-left: none;
+    border-top: 1px solid var(--line-paper);
+    padding: var(--s-5) 0 0;
+  }
+  .surface--dark .line-list li,
+  .surface--deep .line-list li { border-color: var(--line-dark); }
+  .line-list li:first-child { border-top: none; padding-top: 0; }
 }
 
 @media (max-width: 760px) {
@@ -1325,7 +1401,7 @@ strong { font-weight: 600; }
 
   .grid-2,
   .grid-3,
-  
+
   .form-grid { grid-template-columns: 1fr; }
 
   .spec-list li { grid-template-columns: 1fr; gap: var(--s-1); }

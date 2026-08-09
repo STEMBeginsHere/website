@@ -13,6 +13,12 @@
   <meta property="og:title" content="The Program — STEM Begins Here" />
   <meta property="og:description" content="What the bootcamp covers day by day, how we teach it, and what you would need on hand." />
   <meta property="og:url" content="https://stembeginshere.org/program.html" />
+  <meta property="og:image" content="https://stembeginshere.org/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="STEM Begins Here — a free, three-day hands-on hardware engineering bootcamp for grades 6–12." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://stembeginshere.org/images/og-image.png" />
   <meta name="theme-color" content="#06101f" />
 
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
@@ -28,7 +34,7 @@
   <!-- ============ SHARED HEADER — keep identical on every page ============ -->
   <header class="site-header">
     <nav class="nav" aria-label="Primary">
-      <a href="index.html" class="nav-brand" aria-label="STEM Begins Here — home">
+      <a href="index.html" class="nav-brand" aria-label="STEMBeginsHere — home">
         <svg viewBox="0 0 84 92" aria-hidden="true" focusable="false">
           <path d="M42 4 L78.37 25 L78.37 67 L42 88 L5.63 67 L5.63 25 Z" fill="#F5F1E8"/>
           <path d="M42 12 C47.5 18 49 26 47 37 L37 37 C35 26 36.5 18 42 12 Z" fill="#0B1F3A"/>
@@ -41,8 +47,8 @@
           <path d="M26 56.5 C31 54.5 36 54.6 38.5 55.8 M26 61.5 C31 59.5 36 59.6 38.5 60.8 M58 56.5 C53 54.5 48 54.6 45.5 55.8 M58 61.5 C53 59.5 48 59.6 45.5 60.8" fill="none" stroke="#F5F1E8" stroke-width="1.7" stroke-linecap="round"/>
         </svg>
         <span class="nav-brand-text">
-          <span class="nav-brand-name">STEM Begins Here</span>
-          <span class="nav-brand-sub">Hands-on hardware · Grades 6–12</span>
+          <span class="nav-brand-name">STEMBeginsHere</span>
+          <span class="nav-brand-sub">Hands-on hardware, brought to your classroom</span>
         </span>
       </a>
 
@@ -76,71 +82,60 @@
       </div>
     </section>
 
-    <!-- ================= CURRICULUM ================= -->
-    <section class="section surface--paper" id="curriculum">
+    
+    <!-- ================= LOGISTICS ================= -->
+    <section class="section surface--paper">
       <div class="container">
         <div class="section-head js-reveal">
-          <h2>Day by day.</h2>
+          <h2>Who brings what.</h2>
           <p>
-            The written curriculum is an outline rather than a script. Instructors are
-            expected to read the room and adapt, because a session where thirty students
-            move at one fixed pace is a session where a third of them quietly fall behind.
+            We take care of the parts that need equipment and know-how. You take care of
+            the room and the calendar. That is genuinely most of it.
           </p>
         </div>
 
-        <ol class="timeline js-reveal">
-          <li>
-            <span class="timeline-date">Day 1 · 4 hours · Intro to hardware engineering</span>
-            <h3>From "what is a computer" to a working circuit</h3>
-            <p>
-              We start by rebuilding the definition of a computer as anything that follows
-              an input, process, output model, which is a bigger category than students
-              expect. Microwaves and door locks land on the board next to laptops. From
-              there: general-purpose machines versus embedded systems, where a
-              microcontroller sits between them, and why a Pi Pico runs exactly one program
-              at a time.
-            </p>
-            <p style="margin-top: 12px;">
-              Then the kit comes out. Students take apart how a breadboard actually carries
-              current, light an LED with nothing but a battery while we troubleshoot the
-              wiring together, and load their first program onto a Pico. We close by working
-              through the sensors and actuators one at a time, sorting each into input or
-              output and building something small with it.
-            </p>
-          </li>
+        <div class="grid grid-2" style="gap: var(--s-6);">
+          <div class="card js-reveal">
+            <p class="label label--copper" style="margin-bottom: var(--s-5);">We bring</p>
+            <ul class="check-list">
+              <li>A Raspberry Pi Pico kit for every student, including breadboard, sensors, motors, and wiring</li>
+              <li>The full curriculum and all teaching material</li>
+              <li>Instructors who have built this hardware themselves</li>
+              <li>Everything needed for the day three showcase and awards</li>
+            </ul>
+          </div>
 
-          <li>
-            <span class="timeline-date">Day 2 · 4 hours · Build your own project</span>
-            <h3>An hour to decide, three to make it work</h3>
-            <p>
-              Students spend the first hour on ideation and the rest building. This is the
-              least scripted part of the program by design. Instructors circulate the whole
-              time, watching for the students who are stuck on ideation rather than wiring,
-              since those are two different kinds of stuck and they need different help.
-            </p>
-            <p style="margin-top: 12px;">
-              Anyone who finishes early gets pushed further: extend the project, or start a
-              second one without unplugging the first, which is how students discover that
-              one board can hold two behaviors at once.
-            </p>
-          </li>
+          <div class="card js-reveal">
+            <p class="label" style="margin-bottom: var(--s-5);">You bring</p>
+            <ul class="check-list">
+              <li>A room with tables to spread out on, and outlets we can reach</li>
+              <li>Computers or laptops for the students, since code gets written on a regular machine and then moved onto the Pico</li>
+              <li>Someone from your side in the room with us</li>
+              <li>Three blocks of time that fit your calendar</li>
+              <li>A way to let students know it is happening</li>
+            </ul>
+          </div>
+        </div>
 
-          <li>
-            <span class="timeline-date">Day 3 · 2 hours · Showcase</span>
-            <h3>Demonstrate it, explain it, defend it</h3>
-            <p>
-              Ninety minutes of showcase where every student demonstrates their build and
-              walks the room through their design decisions, then judging, awards, and a
-              close-out. Explaining why you chose a distance sensor over a button is where a
-              lot of the learning consolidates.
-            </p>
-          </li>
-        </ol>
-
-        <p class="stat-source js-reveal">
-          Day 1 material adapts the Raspberry Pi Foundation's physical computing teaching
-          module and Ada Computer Science hardware curriculum.
-        </p>
+        <!--
+          PLACEHOLDER — CONFIRM BEFORE LAUNCH.
+          Four things an administrator will ask that we cannot answer honestly yet:
+            1. Maximum students per session (drives kit count and staffing)
+            2. Number of instructors sent per session
+            3. Arizona IVP fingerprint clearance card status for instructors
+               (A.R.S. 15-512 territory; most districts require this for on-site volunteers)
+            4. Liability insurance coverage
+          Fill these into the spec list below. Until then the copy stays non-committal
+          rather than claiming something unverified.
+        -->
+        <div class="callout js-reveal" style="margin-top: var(--s-7);">
+          <p>
+            <strong>Still working this part out:</strong> how many students we can take at
+            once, how many instructors we send, and our background checks and insurance.
+            If there are boxes we need to tick before we can be in a room with your
+            students, just tell us early and we will get them sorted.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -183,81 +178,6 @@
       </div>
     </section>
 
-    <!-- ================= LOGISTICS ================= -->
-    <section class="section surface--paper">
-      <div class="container">
-        <div class="section-head js-reveal">
-          <h2>Who brings what.</h2>
-          <p>
-            We take care of the parts that need equipment and know-how. You take care of
-            the room and the calendar. That is genuinely most of it.
-          </p>
-        </div>
-
-        <div class="grid grid-2" style="gap: 40px;">
-          <div class="card js-reveal">
-            <p class="label label--copper" style="margin-bottom: 20px;">We bring</p>
-            <ul class="check-list">
-              <li>A Raspberry Pi Pico kit for every student, including breadboard, sensors, motors, and wiring</li>
-              <li>The full curriculum and all teaching material</li>
-              <li>Instructors who have built this hardware themselves</li>
-              <li>Everything needed for the day three showcase and awards</li>
-            </ul>
-          </div>
-
-          <div class="card js-reveal">
-            <p class="label" style="margin-bottom: 20px;">You bring</p>
-            <ul class="check-list">
-              <li>A room with tables to spread out on, and outlets we can reach</li>
-              <li>Computers or laptops for the students, since code gets written on a regular machine and then moved onto the Pico</li>
-              <li>Someone from your side in the room with us</li>
-              <li>Three blocks of time that fit your calendar</li>
-              <li>A way to let students know it is happening</li>
-            </ul>
-          </div>
-        </div>
-
-        <!--
-          PLACEHOLDER — CONFIRM BEFORE LAUNCH.
-          Four things an administrator will ask that we cannot answer honestly yet:
-            1. Maximum students per session (drives kit count and staffing)
-            2. Number of instructors sent per session
-            3. Arizona IVP fingerprint clearance card status for instructors
-               (A.R.S. 15-512 territory; most districts require this for on-site volunteers)
-            4. Liability insurance coverage
-          Fill these into the spec list below. Until then the copy stays non-committal
-          rather than claiming something unverified.
-        -->
-        <div class="callout js-reveal" style="margin-top: 40px;">
-          <p>
-            <strong>Still working this part out:</strong> how many students we can take at
-            once, how many instructors we send, and our background checks and insurance.
-            If there are boxes we need to tick before we can be in a room with your
-            students, just tell us early and we will get them sorted.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CTA ================= -->
-    <section class="section surface--deep cta-band">
-      <div class="container js-reveal">
-        <h2>Curious whether it fits your students?</h2>
-        <p>
-          Send us the shape of what you have in mind, even loosely. We will tell you
-          straight away whether we can do it well.
-        </p>
-        <div class="hero-actions">
-          <a href="get-involved.html" class="btn btn-primary">
-            Get in touch <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-          </a>
-          <a href="faq.html" class="btn btn-secondary">Read the FAQ</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
   <!-- ============ SHARED FOOTER — keep identical on every page ============ -->
   <footer class="site-footer">
     <div class="container">
@@ -275,11 +195,10 @@
               <path d="M42 51.5 L42 68.5" stroke="#F5F1E8" stroke-width="2.2"/>
               <path d="M26 56.5 C31 54.5 36 54.6 38.5 55.8 M26 61.5 C31 59.5 36 59.6 38.5 60.8 M58 56.5 C53 54.5 48 54.6 45.5 55.8 M58 61.5 C53 59.5 48 59.6 45.5 60.8" fill="none" stroke="#F5F1E8" stroke-width="1.7" stroke-linecap="round"/>
             </svg>
-            <span class="footer-brand-name">STEM Begins Here</span>
+            <span class="footer-brand-name">STEMBeginsHere</span>
           </div>
           <p>
-            A three-day hardware engineering bootcamp for grades 6 to 12, run on site.
-            It costs nothing.
+            Hands-on hardware, brought to your classroom.
           </p>
         </div>
 
@@ -298,14 +217,13 @@
           <h2 class="footer-heading">Contact</h2>
           <ul>
             <li><a href="mailto:stembeginshere@gmail.com">stembeginshere@gmail.com</a></li>
-            <li><a href="get-involved.html">Host a session</a></li>
-            <li><a href="get-involved.html">Volunteer with us</a></li>
+            <li><a href="get-involved.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 STEM Begins Here</span>
+        <span>&copy; 2026 STEMBeginsHere</span>
         <span>An Arizona nonprofit</span>
       </div>
     </div>
