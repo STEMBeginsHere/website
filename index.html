@@ -143,6 +143,9 @@ a.btn-dark,a.btn-dark:hover{color:#fff}
   background:
     radial-gradient(700px 420px at 82% 8%, rgba(61,220,255,.16), transparent 62%),
     radial-gradient(620px 400px at 8% 88%, rgba(198,242,78,.13), transparent 62%);
+  /* fade the glows out before the section edge so they don't get clipped into a hard line */
+  mask-image:linear-gradient(180deg,#000 60%,transparent 98%);
+  -webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 98%);
   pointer-events:none;
 }
 .hero-grid{
@@ -211,7 +214,7 @@ h1 .q-before{color:#9fb3cc}
 .board-note{margin-top:14px;font-size:.8rem;color:#a8bcd4;text-align:center}
 
 /* ---------- Audience split ---------- */
-.split{padding:8px 0 70px;position:relative}
+.split{padding:70px 0 70px;position:relative}
 .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .door{
   position:relative;border-radius:var(--r-lg);padding:34px 30px 30px;
@@ -261,12 +264,18 @@ h2{font-family:var(--font-display);font-size:clamp(1.85rem,3.6vw,2.75rem);letter
 .light .sec-head p{color:var(--ink-soft)}
 
 /* ---------- Kids: projects ---------- */
-.fun{
+.fun{background:var(--navy-900)}
+.fun::before{
+  content:"";position:absolute;inset:0;
   background:
     radial-gradient(900px 500px at 15% 0%, rgba(198,242,78,.10), transparent 60%),
-    radial-gradient(800px 500px at 90% 100%, rgba(167,139,250,.12), transparent 60%),
-    var(--navy-900);
+    radial-gradient(800px 500px at 90% 100%, rgba(167,139,250,.12), transparent 60%);
+  /* fade the glows out before the section edges so they don't get clipped into hard lines */
+  mask-image:linear-gradient(180deg,transparent 0,#000 8%,#000 62%,transparent 98%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 8%,#000 62%,transparent 98%);
+  pointer-events:none;
 }
+.fun>.wrap{position:relative}
 .proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:18px}
 .proj{
   background:var(--navy-800);border:1px solid var(--line);border-radius:var(--r-md);
@@ -436,11 +445,11 @@ h2{font-family:var(--font-display);font-size:clamp(1.85rem,3.6vw,2.75rem);letter
 
 .quote{
   background:linear-gradient(160deg,var(--navy-700),var(--navy-800));
-  border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:40px 38px;
+  border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:44px 38px 40px;
   position:relative;overflow:hidden;
 }
-.quote::before{content:"\201C";position:absolute;top:-20px;left:22px;font-family:var(--font-display);font-size:9rem;color:rgba(255,255,255,.06);line-height:1}
-.quote p{position:relative;font-size:1.12rem;color:#dce6f3;max-width:62ch;line-height:1.7}
+.quote::before{content:"\201C";position:absolute;top:2px;left:22px;font-family:var(--font-display);font-size:9rem;color:rgba(255,255,255,.06);line-height:1}
+.quote p{position:relative;font-size:1.12rem;color:#dce6f3;max-width:62ch;line-height:1.7;margin-top:20px}
 .quote .by{margin-top:22px;display:flex;align-items:center;gap:13px}
 /* Avatar initials. The color/size/family are restated at higher specificity because
    `.by span` and `.person span` would otherwise win and render them invisible. */
@@ -687,7 +696,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
           <span class="led"></span><span class="led"></span><span class="led"></span><span class="led"></span><span class="led"></span>
         </div>
       </div>
-      <div class="code-strip"><span class="k">while</span> True: led.<span class="s">toggle</span>()  <span class="cmt"># it blinks because you told it to</span></div>
+      <div class="code-strip"><span class="k">while</span> True: led.<span class="s">toggle</span>()  <span class="cmt"># it blinks because you coded it</span></div>
       <p class="board-note">Raspberry Pi, breadboard, sensors, and wires — different projects, same foundation.</p>
     </div>
   </div>
