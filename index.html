@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STEM Begins Here: Free Hands-On Engineering &amp; Coding Bootcamp, Grades 6–12</title>
-<meta name="description" content="A free three-session hardware engineering bootcamp run on-site at your school for grades 6 through 12. Students learn to code by building things that sense, decide, and move. We bring every kit, the full curriculum, and the instructors. No cost to schools or families.">
+<title>STEMBeginsHere: Free Hands-On Engineering &amp; Coding Workshops, Grades 6–12</title>
+<meta name="description" content="A free one- or two-day hands-on hardware engineering workshop run on-site at your school for grades 6 through 12. Students learn to code by building things that sense, decide, and move. We bring every kit, the full curriculum, and the instructors. No cost to schools or families.">
 <meta name="theme-color" content="#06101f">
 <link rel="canonical" href="https://stembeginshere.org/">
 
 <!-- Open Graph / Twitter. These drive the link preview when the page is pasted
      into email, Slack, or LinkedIn. Update og:image if you replace the artwork. -->
-<meta property="og:site_name" content="STEM Begins Here">
+<meta property="og:site_name" content="STEMBeginsHere">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://stembeginshere.org/">
-<meta property="og:title" content="STEM Begins Here: Free Hands-On Engineering Bootcamp for Grades 6–12">
-<meta property="og:description" content="A three-session hardware engineering bootcamp run on-site at your school. We bring every kit, the full curriculum, and the instructors. No cost to your school, your students, or their families.">
+<meta property="og:title" content="STEMBeginsHere: Free Hands-On Engineering Workshops for Grades 6–12">
+<meta property="og:description" content="A one- or two-day hands-on hardware engineering workshop run on-site at your school. We bring every kit, the full curriculum, and the instructors. No cost to your school, your students, or their families.">
 <meta property="og:image" content="https://stembeginshere.org/images/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="STEM Begins Here: a free, three-session hands-on hardware engineering bootcamp for grades 6 to 12.">
+<meta property="og:image:alt" content="STEMBeginsHere: a free, one- or two-day hands-on hardware engineering workshop for grades 6 to 12.">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="STEM Begins Here: Free Hands-On Engineering Bootcamp for Grades 6–12">
-<meta name="twitter:description" content="Three sessions, ten hours, a kit for every student. We bring everything. It costs nothing.">
+<meta name="twitter:title" content="STEMBeginsHere: Free Hands-On Engineering Workshops for Grades 6–12">
+<meta name="twitter:description" content="One or two days, a kit for every student. We bring everything. It costs nothing.">
 <meta name="twitter:image" content="https://stembeginshere.org/images/og-image.png">
 
 <!-- Helps Google show the org correctly and understand you are a nonprofit. -->
@@ -30,10 +30,10 @@
 {
   "@context": "https://schema.org",
   "@type": "NGO",
-  "name": "STEM Begins Here",
+  "name": "STEMBeginsHere",
   "url": "https://stembeginshere.org/",
   "email": "stembeginshere@gmail.com",
-  "description": "An Arizona nonprofit running free, three-session hands-on hardware engineering bootcamps for students in grades 6 to 12.",
+  "description": "An Arizona nonprofit running free one- and two-day hands-on hardware engineering workshops for students in grades 6 to 12.",
   "areaServed": {"@type": "State", "name": "Arizona"},
   "knowsAbout": ["Hardware engineering", "Physical computing", "STEM education"]
 }
@@ -42,506 +42,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-<style>
-/* ============================================================
-   STEM Begins Here redesign
-   Single file. Drop it in as index.html.
-   ============================================================ */
-
-:root{
-  --navy-900:#06101f;
-  --navy-800:#0b1a2e;
-  --navy-700:#11263f;
-  --navy-600:#1b3554;
-  --line:rgba(255,255,255,.10);
-  --line-strong:rgba(255,255,255,.20);
-
-  --paper:#f6f8fb;
-  --paper-2:#ffffff;
-  --ink:#0d1a2b;
-  --ink-soft:#4a5c72;
-
-  --lime:#c6f24e;
-  --cyan:#3ddcff;
-  --amber:#ff8a3d;
-  --coral:#ff6b6b;
-  --violet:#a78bfa;
-
-  --r-sm:10px;
-  --r-md:18px;
-  --r-lg:28px;
-  --shadow:0 24px 60px -30px rgba(6,16,31,.55);
-
-  --font-display:'Space Grotesk',system-ui,sans-serif;
-  --font-body:'Inter',system-ui,sans-serif;
-  --font-mono:'JetBrains Mono',ui-monospace,monospace;
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{
-  font-family:var(--font-body);
-  background:var(--navy-900);
-  color:#e8eef7;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
-
-.wrap{width:min(1180px,92vw);margin-inline:auto}
-.skip{position:absolute;left:-9999px;top:0;background:var(--lime);color:var(--navy-900);padding:12px 18px;border-radius:0 0 8px 0;z-index:999;font-weight:700}
-.skip:focus{left:0}
-
-/* ---------- Nav ---------- */
-header.nav{
-  position:sticky;top:0;z-index:100;
-  background:rgba(6,16,31,.82);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-}
-.nav-in{display:flex;align-items:center;gap:22px;padding:14px 0}
-.brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:700;font-size:1.06rem;letter-spacing:-.02em}
-.brand .chip{
-  width:38px;height:38px;flex:none;display:block;
-  filter:drop-shadow(0 6px 14px rgba(61,220,255,.28));
-  transition:transform .25s cubic-bezier(.2,.9,.3,1.3);
-}
-.brand:hover .chip{transform:translateY(-2px) rotate(-4deg)}
-.brand small{display:block;font-family:var(--font-body);font-weight:400;font-size:.68rem;color:#b3c5da;letter-spacing:0}
-.nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;row-gap:4px;gap:4px;margin-left:auto;align-items:center}
-.nav-links a:not(.btn){padding:9px 13px;border-radius:8px;font-size:.9rem;color:#b9c8dc;font-weight:500;transition:.18s}
-.nav-links a:not(.btn):hover{background:rgba(255,255,255,.07);color:#fff}
-.btn{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:13px 22px;border-radius:999px;font-weight:700;font-size:.94rem;
-  transition:transform .18s cubic-bezier(.2,.9,.3,1.3), box-shadow .18s, background .18s;
-  white-space:nowrap;
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--lime);color:var(--navy-900);box-shadow:0 12px 30px -14px var(--lime)}
-.btn-primary:hover{box-shadow:0 18px 38px -14px var(--lime)}
-.btn-ghost{border:1px solid var(--line-strong);color:#dce6f3}
-.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--amber);color:#fff}
-.btn-dark{background:var(--navy-900);color:#fff}
-.btn-sm{padding:10px 18px;font-size:.87rem}
-/* defensive: buttons keep their own colors even inside link-styled containers */
-a.btn-primary,a.btn-primary:hover{color:var(--navy-900)}
-a.btn-ghost,a.btn-ghost:hover{color:#dce6f3}
-a.btn-dark,a.btn-dark:hover{color:#fff}
-.nav-cta{margin-left:8px}
-.burger{display:none;margin-left:auto;padding:9px;border-radius:9px;border:1px solid var(--line-strong)}
-.burger span{display:block;width:20px;height:2px;background:#dce6f3;margin:4px 0;border-radius:2px}
-
-
-/* ---------- Hero ---------- */
-.hero{position:relative;padding:76px 0 60px;overflow:hidden}
-.hero::before{
-  content:"";position:absolute;inset:0;
-  background:
-    radial-gradient(700px 420px at 82% 8%, rgba(61,220,255,.16), transparent 62%),
-    radial-gradient(620px 400px at 8% 88%, rgba(198,242,78,.13), transparent 62%);
-  /* fade the glows out before the section edge so they don't get clipped into a hard line */
-  mask-image:linear-gradient(180deg,#000 60%,transparent 98%);
-  -webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 98%);
-  pointer-events:none;
-}
-.hero-grid{
-  position:absolute;inset:0;opacity:.35;pointer-events:none;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:52px 52px;
-  mask-image:radial-gradient(ellipse 90% 70% at 50% 30%,#000,transparent 75%);
-}
-.hero-in{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:7px 15px 7px 9px;border-radius:999px;
-  background:rgba(198,242,78,.12);border:1px solid rgba(198,242,78,.32);
-  color:var(--lime);font-size:.79rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
-  margin-bottom:22px;
-}
-.eyebrow b{background:var(--lime);color:var(--navy-900);padding:2px 8px;border-radius:999px;font-size:.72rem}
-h1{
-  font-family:var(--font-display);
-  font-size:clamp(2.05rem,4.5vw,3.4rem);
-  line-height:1.08;letter-spacing:-.03em;font-weight:700;color:#fff;text-wrap:balance;
-}
-h1 .grad{background:linear-gradient(100deg,var(--lime),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
-/* the "before" half of the transformation reads quieter than the "after" */
-h1 .q-before{color:#9fb3cc}
-.lede{margin-top:22px;font-size:1.13rem;color:#c3d2e4;max-width:53ch}
-.lede strong{color:#fff;font-weight:600}
-.hero-btns{display:flex;gap:13px;margin-top:32px;flex-wrap:wrap}
-
-.trust{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-  margin-top:44px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;
-}
-.trust div{background:var(--navy-800);padding:18px 16px}
-.trust dt{font-size:.71rem;text-transform:uppercase;letter-spacing:.09em;color:#a8bcd4;font-weight:700}
-.trust dd{font-family:var(--font-display);font-size:1.32rem;font-weight:700;color:#fff;margin-top:5px;line-height:1.2}
-.trust dd.free{color:var(--lime)}
-
-/* Hero board visual */
-.board-card{
-  background:linear-gradient(165deg,var(--navy-700),var(--navy-800));
-  border:1px solid var(--line-strong);border-radius:var(--r-lg);
-  padding:26px;box-shadow:var(--shadow);position:relative;
-}
-.board-card h3{font-family:var(--font-display);font-size:.82rem;text-transform:uppercase;letter-spacing:.11em;color:#b3c5da;margin-bottom:18px}
-.board{
-  border-radius:14px;position:relative;
-}
-.board-illustration{width:100%;height:auto;display:block;border-radius:10px}
-.leds{position:relative;z-index:2;display:flex;justify-content:center;gap:14px;margin-top:16px}
-.led{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.16);transition:.25s}
-.led.on{box-shadow:0 0 16px 3px currentColor;background:currentColor}
-.led:nth-child(1){color:var(--coral)}
-.led:nth-child(2){color:var(--amber)}
-.led:nth-child(3){color:var(--lime)}
-.led:nth-child(4){color:var(--cyan)}
-.led:nth-child(5){color:var(--violet)}
-.code-strip{
-  margin-top:18px;font-family:var(--font-mono);font-size:.78rem;color:#d4dfec;
-  background:rgba(0,0,0,.42);border-radius:10px;padding:13px 14px;border:1px solid var(--line-strong);
-  overflow-x:auto;white-space:nowrap;max-width:100%;
-}
-.code-strip .cmt{color:#9fb3cc}
-.code-strip .k{color:var(--violet)}
-.code-strip .s{color:var(--lime)}
-.board-note{margin-top:14px;font-size:.8rem;color:#a8bcd4;text-align:center}
-
-/* ---------- Audience split ---------- */
-.split{padding:70px 0 70px;position:relative}
-.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.door{
-  position:relative;border-radius:var(--r-lg);padding:34px 30px 30px;
-  border:1px solid var(--line-strong);overflow:hidden;transition:.25s;
-  background:linear-gradient(160deg,var(--navy-700),var(--navy-800));
-}
-.door:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.32)}
-.door .tag{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:8px 16px 8px 10px;border-radius:999px;
-  background:var(--cyan);color:var(--navy-900);
-  font-family:var(--font-display);font-size:.83rem;font-weight:700;
-  letter-spacing:.02em;text-transform:uppercase;
-  box-shadow:0 10px 26px -14px var(--cyan);
-}
-.ic{width:17px;height:17px;flex:none;display:block}
-.door .tag{padding-left:14px}
-.door .tag .ic{width:19px;height:19px}
-.door.kids .tag{background:var(--lime);box-shadow:0 10px 26px -14px var(--lime)}
-.door h3{font-family:var(--font-display);font-size:1.7rem;margin:18px 0 6px;color:#fff;letter-spacing:-.02em}
-.door .who{
-  font-family:var(--font-mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--cyan);font-weight:700;margin-bottom:12px;
-}
-.door.kids .who{color:var(--lime)}
-.door p{color:#c3d2e4;font-size:.98rem;max-width:40ch}
-.door ul{list-style:none;margin:20px 0 24px;display:grid;gap:9px}
-.door li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:#c5d3e5}
-.door li::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--cyan);margin-top:8px;flex:none}
-.door.kids li::before{background:var(--lime)}
-.door .glow{position:absolute;width:220px;height:220px;border-radius:50%;filter:blur(70px);opacity:.3;top:-70px;right:-50px;background:var(--cyan)}
-.door.kids .glow{background:var(--lime)}
-
-/* ---------- Sections ---------- */
-section{position:relative}
-.pad{padding:84px 0}
-.light{background:var(--paper);color:var(--ink)}
-.light h2,.light h3,.light h4{color:var(--ink)}
-.sec-head{max-width:70ch;margin-bottom:44px}
-.kicker{
-  font-family:var(--font-mono);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--cyan);font-weight:700;margin-bottom:14px;display:block;
-}
-.light .kicker{color:#0e7490}
-h2{font-family:var(--font-display);font-size:clamp(1.85rem,3.6vw,2.75rem);letter-spacing:-.03em;line-height:1.1;color:#fff;font-weight:700}
-.sec-head p{margin-top:16px;font-size:1.06rem;color:#c3d2e4}
-.light .sec-head p{color:var(--ink-soft)}
-
-/* ---------- Kids: projects ---------- */
-.fun{background:var(--navy-900)}
-.fun::before{
-  content:"";position:absolute;inset:0;
-  background:
-    radial-gradient(900px 500px at 15% 0%, rgba(198,242,78,.10), transparent 60%),
-    radial-gradient(800px 500px at 90% 100%, rgba(167,139,250,.12), transparent 60%);
-  /* fade the glows out before the section edges so they don't get clipped into hard lines */
-  mask-image:linear-gradient(180deg,transparent 0,#000 8%,#000 62%,transparent 98%);
-  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 8%,#000 62%,transparent 98%);
-  pointer-events:none;
-}
-.fun>.wrap{position:relative}
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:18px}
-.proj{
-  background:var(--navy-800);border:1px solid var(--line);border-radius:var(--r-md);
-  padding:26px 22px;transition:.22s;position:relative;overflow:hidden;
-}
-.proj:hover{transform:translateY(-5px);border-color:var(--line-strong);box-shadow:0 24px 50px -30px #000}
-.proj .icon{font-size:1.9rem;line-height:1;margin-bottom:16px;display:block}
-.proj h4{font-family:var(--font-display);font-size:1.14rem;color:#fff;margin-bottom:8px;letter-spacing:-.01em}
-.proj p{font-size:.92rem;color:#bccbde}
-.proj .parts{
-  margin-top:16px;display:flex;flex-wrap:wrap;gap:6px;
-}
-.parts span{
-  font-family:var(--font-mono);font-size:.74rem;padding:5px 10px;border-radius:6px;
-  background:rgba(255,255,255,.09);color:#cbd8e8;border:1px solid var(--line-strong);
-}
-.proj .bar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:.28s}
-.proj:hover .bar{transform:scaleX(1)}
-.proj:nth-child(2) .bar{background:var(--lime)}
-.proj:nth-child(3) .bar{background:var(--amber)}
-.proj:nth-child(4) .bar{background:var(--coral)}
-.proj:nth-child(5) .bar{background:var(--violet)}
-.proj:nth-child(6) .bar{background:var(--cyan)}
-.proj-note{
-  margin-top:26px;padding:18px 22px;border-radius:var(--r-md);
-  border:1px dashed var(--line-strong);color:#b3c5da;font-size:.92rem;
-}
-.proj-note b{color:var(--lime)}
-
-/* ---------- Unlocks ---------- */
-.unlock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
-.unlock{
-  border-radius:var(--r-md);padding:28px 24px;border:1px solid var(--line);
-  background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.01));
-}
-.unlock .num{font-family:var(--font-display);font-size:2.2rem;font-weight:700;line-height:1;color:var(--lime);margin-bottom:14px}
-.unlock:nth-child(2) .num{color:var(--cyan)}
-.unlock:nth-child(3) .num{color:var(--amber)}
-.unlock h4{font-family:var(--font-display);font-size:1.16rem;color:#fff;margin-bottom:9px}
-.unlock p{font-size:.93rem;color:#bccbde}
-
-/* ---------- Three sessions timeline ---------- */
-.sessions{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-radius:var(--r-lg);overflow:hidden;border:1px solid rgba(13,26,43,.12)}
-.session{background:var(--paper-2);padding:32px 28px;border-right:1px solid rgba(13,26,43,.10);position:relative}
-.session:last-child{border-right:none}
-.session .n{
-  font-family:var(--font-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
-  color:#0e7490;font-weight:700;
-}
-.session h4{font-family:var(--font-display);font-size:1.3rem;margin:10px 0 12px;letter-spacing:-.02em}
-.session p{color:var(--ink-soft);font-size:.95rem}
-.session .strip{position:absolute;top:0;left:0;right:0;height:4px;background:var(--cyan)}
-.session:nth-child(2) .strip{background:var(--amber)}
-.session:nth-child(3) .strip{background:var(--lime)}
-
-/* ---------- Admin: who brings what ---------- */
-.brings{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.bring{
-  background:var(--paper-2);border:1px solid rgba(13,26,43,.10);border-radius:var(--r-lg);
-  padding:32px 30px;box-shadow:0 18px 44px -34px rgba(13,26,43,.6);
-}
-.bring.you{background:linear-gradient(165deg,#0b1a2e,#11263f);border-color:var(--line-strong)}
-.bring.you h3,.bring.you li{color:#e8eef7}
-.bring h3{font-family:var(--font-display);font-size:1.36rem;margin-bottom:6px;letter-spacing:-.02em}
-.bring .sub{font-size:.86rem;color:var(--ink-soft);margin-bottom:20px}
-.bring.you .sub{color:#b3c5da}
-.bring ul{list-style:none;display:grid;gap:12px}
-.bring li{display:flex;gap:12px;font-size:.97rem;color:var(--ink);align-items:flex-start}
-.check{
-  width:21px;height:21px;border-radius:6px;flex:none;display:grid;place-items:center;margin-top:1px;
-  background:rgba(14,116,144,.12);color:#0e7490;font-size:.72rem;font-weight:900;
-}
-.bring.you .check{background:rgba(198,242,78,.15);color:var(--lime)}
-
-/* ---------- Price callout ---------- */
-.price-callout{
-  margin-top:26px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;
-  padding:26px 28px;border-radius:var(--r-lg);
-  background:linear-gradient(135deg,var(--lime),#8fe6c0);
-  border:1px solid rgba(13,26,43,.14);
-  box-shadow:0 20px 44px -26px rgba(13,26,43,.55);
-}
-.price-figure{
-  font-family:var(--font-display);font-weight:700;color:var(--navy-900);
-  font-size:clamp(3.4rem,7vw,4.6rem);line-height:.86;letter-spacing:-.045em;
-  display:flex;align-items:flex-start;flex:none;
-}
-.price-figure .cur{font-size:.5em;margin-top:.12em;margin-right:.02em}
-.price-copy{flex:1 1 240px}
-.price-copy b{
-  display:block;font-family:var(--font-display);font-size:1.42rem;font-weight:700;
-  color:var(--navy-900);letter-spacing:-.02em;line-height:1.2;
-}
-.price-copy p{margin-top:7px;font-size:1rem;color:rgba(6,16,31,.82);font-weight:500;max-width:44ch}
-/* bolded lead-ins inside the "you bring" checklist */
-.bring li b{color:inherit;font-weight:700}
-.bring.you li b{color:#fff}
-
-/* ---------- Steps ---------- */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
-.step{background:var(--paper-2);border:1px solid rgba(13,26,43,.10);border-radius:var(--r-md);padding:26px 24px;position:relative}
-.step .b{
-  width:34px;height:34px;border-radius:10px;background:var(--ink);color:#fff;
-  display:grid;place-items:center;font-family:var(--font-display);font-weight:700;margin-bottom:16px;
-}
-.step h4{font-family:var(--font-display);font-size:1.1rem;margin-bottom:8px}
-.step p{font-size:.93rem;color:var(--ink-soft)}
-
-/* ---------- Problem cards ---------- */
-.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.prob{border-left:3px solid var(--coral);padding:6px 0 6px 22px}
-.prob:nth-child(2){border-color:var(--amber)}
-.prob:nth-child(3){border-color:var(--cyan)}
-.prob h4{font-family:var(--font-display);font-size:1.1rem;color:#fff;margin-bottom:9px}
-.prob p{font-size:.94rem;color:#bccbde}
-
-/* ---------- FAQ ---------- */
-.faq{display:grid;gap:10px;max-width:880px}
-.q{background:var(--paper-2);border:1px solid rgba(13,26,43,.10);border-radius:var(--r-md);overflow:hidden}
-.q button{
-  width:100%;text-align:left;display:flex;gap:16px;align-items:center;
-  padding:20px 24px;font-family:var(--font-display);font-weight:600;font-size:1.03rem;color:var(--ink);
-}
-.q button:hover{background:rgba(13,26,43,.03)}
-.q .plus{margin-left:auto;font-size:1.3rem;color:#0e7490;transition:.25s;flex:none;line-height:1}
-.q.open .plus{transform:rotate(45deg)}
-.q .a{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.q .a p{padding:0 24px 22px;color:var(--ink-soft);font-size:.97rem;max-width:70ch}
-
-/* ---------- Track record / 2021 pilot ---------- */
-.pilot{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.pilot div{
-  background:var(--paper-2);border:1px solid rgba(13,26,43,.10);border-radius:var(--r-md);
-  padding:26px 24px;box-shadow:0 18px 44px -34px rgba(13,26,43,.6);
-}
-.pilot dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.11em;color:#0e7490;font-weight:700}
-.pilot dd{font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--ink);line-height:1;margin:8px 0 10px;letter-spacing:-.03em}
-.pilot dd.hi{color:#2f6b17}
-.pilot p{font-size:.93rem;color:var(--ink-soft);line-height:1.5}
-
-.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.voice{
-  background:var(--paper-2);border:1px solid rgba(13,26,43,.10);border-radius:var(--r-md);
-  padding:26px 24px;margin:0;display:flex;flex-direction:column;gap:14px;
-}
-.voice blockquote{
-  margin:0;font-size:1rem;line-height:1.55;color:var(--ink);font-style:italic;
-  position:relative;padding-top:26px;
-}
-.voice blockquote::before{
-  content:"\201C";position:absolute;top:-6px;left:-2px;
-  font-family:var(--font-display);font-size:3.2rem;line-height:1;color:var(--cyan);
-}
-.voice figcaption{
-  margin-top:auto;font-family:var(--font-mono);font-size:.74rem;letter-spacing:.08em;
-  text-transform:uppercase;color:#0e7490;font-weight:700;
-}
-
-/* ---------- Convictions / about ---------- */
-.conv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.conv-grid-2{grid-template-columns:repeat(2,1fr)}
-.conv{background:var(--navy-800);border:1px solid var(--line);border-radius:var(--r-md);padding:28px 24px}
-.conv h4{font-family:var(--font-display);font-size:1.15rem;color:#fff;margin-bottom:10px}
-.conv p{font-size:.93rem;color:#bccbde}
-.conv .dot{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-size:1.1rem;margin-bottom:16px;background:rgba(61,220,255,.13)}
-.conv:nth-child(2) .dot{background:rgba(198,242,78,.13)}
-
-.quote{
-  background:linear-gradient(160deg,var(--navy-700),var(--navy-800));
-  border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:44px 38px 40px;
-  position:relative;overflow:hidden;
-}
-.quote::before{content:"\201C";position:absolute;top:2px;left:22px;font-family:var(--font-display);font-size:9rem;color:rgba(255,255,255,.06);line-height:1}
-.quote p{position:relative;font-size:1.12rem;color:#dce6f3;max-width:62ch;line-height:1.7;margin-top:20px}
-.quote .by{margin-top:22px;display:flex;align-items:center;gap:13px}
-/* Avatar initials. The color/size/family are restated at higher specificity because
-   `.by span` and `.person span` would otherwise win and render them invisible. */
-.av,.by .av,.person .av{
-  width:46px;height:46px;border-radius:13px;display:grid;place-items:center;flex:none;
-  background:linear-gradient(140deg,var(--lime),var(--cyan));
-  color:var(--navy-900);
-  font-family:var(--font-display);font-weight:700;font-size:1.02rem;
-  letter-spacing:.01em;text-transform:none;
-  box-shadow:inset 0 0 0 1px rgba(6,16,31,.18);
-}
-.by b{display:block;color:#fff;font-family:var(--font-display);font-size:1rem}
-.by span:not(.av){font-size:.85rem;color:#b3c5da}
-
-.team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
-.person{background:var(--navy-800);border:1px solid var(--line);border-radius:var(--r-md);padding:24px}
-.person .av{margin-bottom:14px}
-.person b{display:block;font-family:var(--font-display);font-size:1.05rem;color:#fff}
-.person span:not(.av){font-size:.82rem;color:var(--cyan);font-family:var(--font-mono);letter-spacing:.06em;text-transform:uppercase}
-
-/* ---------- Contact ---------- */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
-form{display:grid;gap:16px}
-.field label{display:block;font-size:.84rem;font-weight:600;color:#b9c8dc;margin-bottom:7px}
-.field input,.field select,.field textarea{
-  width:100%;padding:14px 16px;border-radius:12px;
-  background:rgba(255,255,255,.05);border:1px solid var(--line-strong);
-  color:#fff;font-family:var(--font-body);font-size:.97rem;transition:.18s;
-}
-.field textarea{min-height:130px;resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--lime);background:rgba(255,255,255,.08)}
-.field select option{background:var(--navy-800)}
-.priv{font-size:.83rem;color:#a8bcd4}
-.next{display:grid;gap:14px;margin-top:26px}
-.next li{list-style:none;display:flex;gap:13px;align-items:flex-start;font-size:.95rem;color:#c5d3e5}
-.next .n{font-family:var(--font-mono);color:var(--lime);font-weight:700;flex:none}
-.ways{display:grid;gap:14px;margin-bottom:26px}
-.way{border:1px solid var(--line);border-radius:var(--r-md);padding:22px 22px;background:var(--navy-800)}
-.way h4{font-family:var(--font-display);font-size:1.08rem;color:#fff;margin-bottom:7px}
-.way p{font-size:.92rem;color:#bccbde}
-
-/* ---------- Big CTA ---------- */
-.cta{
-  border-radius:var(--r-lg);padding:60px 46px;text-align:center;position:relative;overflow:hidden;
-  background:linear-gradient(140deg,var(--lime),#7fe3b0 55%,var(--cyan));
-  color:var(--navy-900);
-}
-.cta h2{color:var(--navy-900);font-size:clamp(1.9rem,4vw,3rem)}
-.cta p{margin:16px auto 0;max-width:56ch;font-size:1.06rem;color:rgba(6,16,31,.78)}
-.cta .hero-btns{justify-content:center}
-.cta .btn-dark:hover{box-shadow:0 18px 40px -18px rgba(6,16,31,.7)}
-.cta .btn-outline{border:1.5px solid rgba(6,16,31,.35);color:var(--navy-900)}
-.cta .btn-outline:hover{background:rgba(6,16,31,.08)}
-
-/* ---------- Footer ---------- */
-footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--navy-900)}
-.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px}
-.foot p{font-size:.92rem;color:#b3c5da;margin-top:12px;max-width:34ch}
-.foot h5{font-family:var(--font-display);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:#a8bcd4;margin-bottom:14px}
-.foot ul{list-style:none;display:grid;gap:9px}
-.foot a{font-size:.93rem;color:#b9c8dc}
-.foot a:hover{color:var(--lime)}
-.legal{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);font-size:.85rem;color:#9fb3cc;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
-/* ---------- Reveal ---------- */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.3,1)}
-.rv.in{opacity:1;transform:none}
-
-/* ---------- Responsive ---------- */
-@media (max-width:960px){
-  .hero-in,.split-grid,.brings,.contact-grid{grid-template-columns:minmax(0,1fr)}
-  .sessions,.steps,.unlock-grid,.prob-grid,.conv-grid,.team,.pilot,.voices{grid-template-columns:minmax(0,1fr)}
-  .session{border-right:none;border-bottom:1px solid rgba(13,26,43,.10)}
-  .trust{grid-template-columns:1fr 1fr}
-  .foot{grid-template-columns:1fr 1fr}
-  .nav-links{
-    display:none;position:absolute;top:100%;left:0;right:0;
-    flex-direction:column;align-items:stretch;gap:2px;padding:12px;
-    background:var(--navy-800);border-bottom:1px solid var(--line);
-  }
-  .nav-links.show{display:flex}
-  .nav-cta{margin:8px 0 4px;justify-content:center}
-  .burger{display:block}
-  .price-callout{gap:16px;padding:22px}
-  .pad{padding:62px 0}
-  .cta{padding:44px 26px}
-}
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .rv{opacity:1;transform:none}
-}
-</style>
+<link rel="stylesheet" href="assets/styles.css?v=11">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -585,12 +86,20 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
     <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-links" id="navlinks">
       <a href="#schools">For Schools</a>
-      <a href="#build">What Students Build</a>
       <a href="#program">The Program</a>
-      <a href="#track">Track Record</a>
       <a href="#about">About</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn-primary btn-sm nav-cta" href="#contact">Book a session</a>
+      <a href="stories.html">Stories</a>
+      <div class="dd">
+        <button type="button" aria-haspopup="true">Get Involved</button>
+        <div class="dd-menu">
+          <a href="volunteer.html">Volunteer</a>
+          <a href="clubs.html">Run a Club</a>
+          <a href="press.html">Press &amp; Media</a>
+        </div>
+      </div>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn btn-primary btn-sm nav-cta" href="contact.html">Book a session</a>
     </nav>
   </div>
 </header>
@@ -604,26 +113,152 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
   <div class="wrap hero-in">
     <div>
       <span class="eyebrow"><b>FREE</b> Arizona nonprofit · Grades 6–12</span>
-      <h1>From <span class="q-before">&ldquo;I&rsquo;ve never wired anything&rdquo;</span> to <span class="grad">&ldquo;I built this,&rdquo;</span> in ten hours.</h1>
+      <h1>From <span class="q-before">&ldquo;I&rsquo;ve never wired anything&rdquo;</span> to <span class="grad">&ldquo;I built this,&rdquo;</span> in a day.</h1>
       <p class="lede">
-        A three-session engineering bootcamp for <strong>grades 6 through 12</strong>, run
+        A one- or two-day engineering workshop for <strong>grades 6 through 12</strong>, run
         <strong>on-site at your school</strong>. Every kit, every instructor, and the full curriculum
         come with us. <strong>There is no cost to your school, your students, or their families.</strong>
       </p>
       <div class="hero-btns">
-        <a class="btn btn-primary" href="#contact">Bring it to your students →</a>
+        <a class="btn btn-primary" href="contact.html">Bring it to your students →</a>
         <a class="btn btn-ghost" href="#build">See what kids build</a>
       </div>
 
       <dl class="trust">
         <div><dt>Cost</dt><dd class="free">$0</dd></div>
-        <div><dt>Format</dt><dd>3 sessions · 10 hrs</dd></div>
+        <div><dt>Format</dt><dd>1 or 2 days</dd></div>
         <div><dt>Class size</dt><dd>20–25 students</dd></div>
         <div><dt>Experience needed</dt><dd>None</dd></div>
       </dl>
     </div>
 
-    <div class="board-card">
+    <div class="hero-photos">
+      <figure class="photo main"><img src="images/workshop/group-kits-hero.jpg" alt="Students hold up their hardware kits in a group photo with our two instructors" width="1800" height="1350"></figure>
+      <figure class="photo inset"><img src="images/workshop/founder-teaching.jpg" alt="Ronith Balusani, founder, teaching in front of a slide about a tilt switch" width="1200" height="1600" style="object-position:50% 28%"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WATCH A SESSION ============ -->
+<section class="watch" id="watch">
+  <div class="wrap watch-in">
+    <div class="rv">
+      <span class="kicker">Inside a session</span>
+      <h2>This is what a Saturday looks like.</h2>
+      <p style="margin-top:16px;font-size:1.06rem;color:#c3d2e4">An instructor at the screen, a kit on every table, and a room full of students wiring their first circuits. No lectures to sit through: every idea gets built right away.</p>
+    </div>
+    <figure class="video rv"><video autoplay muted loop playsinline controls preload="metadata" poster="images/videos/teaching-poster.jpg"><source src="images/videos/teaching.mp4" type="video/mp4">Your browser can't play this video.</video></figure>
+  </div>
+</section>
+
+<!-- ============ TWO DOORS ============ -->
+<section class="split">
+  <div class="wrap" style="margin-bottom:22px">
+    <p class="rv" style="font-family:var(--font-mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#a8bcd4;font-weight:700">Start where you fit</p>
+  </div>
+  <div class="wrap split-grid">
+    <a class="door rv" href="#schools">
+      <span class="glow"></span>
+      <span class="tag"><svg class="ic" aria-hidden="true"><use href="#ic-school"/></svg> For school administrators</span>
+      <h3>What hosting actually takes</h3>
+      <p class="who">Principals · Teachers · Program &amp; district directors</p>
+      <p>Short version: a room, some outlets, and a group of students. We deliberately kept it that way. No technical background required from anyone on your staff.</p>
+      <ul>
+        <li>No budget line, no purchase order, no equipment to buy</li>
+        <li>No staff member needs a technical background</li>
+        <li>One or two days that fit your existing calendar</li>
+      </ul>
+      <span class="btn btn-ghost btn-sm">See the logistics →</span>
+    </a>
+
+    <a class="door kids rv" href="#build">
+      <span class="glow"></span>
+      <span class="tag"><svg class="ic" aria-hidden="true"><use href="#ic-student"/></svg> For students</span>
+      <h3>Stuff you get to build</h3>
+      <p class="who">Grades 6–12 · No experience needed</p>
+      <p>Motion alarms. Plant waterers. Reaction-time games. Things that move when the world around them changes.</p>
+      <ul>
+        <li>Design and wire your own project</li>
+        <li>Show it off and explain how it works at the showcase</li>
+        <li>Design your own project, not one out of a kit</li>
+      </ul>
+      <span class="btn btn-primary btn-sm">See the projects →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ SCHOOLS / ADMIN ============ -->
+<section class="pad light" id="schools">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">For administrators</span>
+      <h2>It takes less than you might think.</h2>
+      <p>We take care of the parts that need equipment and know-how. You take care of the room and the calendar.</p>
+    </div>
+
+    <div class="brings">
+      <div class="bring you rv">
+        <h3>We bring</h3>
+        <p class="sub">Everything that needs money or expertise.</p>
+        <ul>
+          <li><span class="check">✓</span> Hardware kits, including breadboard, sensors, motors, and wiring</li>
+          <li><span class="check">✓</span> The full curriculum and all teaching material</li>
+          <li><span class="check">✓</span> Instructors who have built this hardware themselves</li>
+          <li><span class="check">✓</span> Three instructors in the room, alongside your staff and proctors</li>
+          <li><span class="check">✓</span> Everything needed for the end-of-workshop showcase and awards</li>
+        </ul>
+      </div>
+
+      <div class="bring rv">
+        <h3>You bring</h3>
+        <p class="sub">Nothing you have to buy.</p>
+        <ul>
+          <li><span class="check">✓</span><span><b>A room with tables.</b> Space to spread out, and outlets we can reach.</span></li>
+          <li><span class="check">✓</span><span><b>Computers students can code on.</b> We work within whatever your district's devices already allow, including locked-down Chromebooks. Tell us your setup during scheduling and we adapt to it.</span></li>
+          <li><span class="check">✓</span><span><b>One adult from your team in the room.</b> No technical background needed.</span></li>
+          <li><span class="check">✓</span><span><b>One or two days.</b> Scheduled around your calendar, not ours.</span></li>
+          <li><span class="check">✓</span><span><b>A way to tell students it's happening.</b> An announcement or a mention in class is plenty.</span></li>
+        </ul>
+        <div class="price-callout">
+          <div class="price-figure" aria-hidden="true"><span class="cur">$</span>0</div>
+          <div class="price-copy">
+            <b>Free for everyone.</b>
+            <p>Nobody pays anything. Not the school, not the students, not their families.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps rv">
+      <div class="step">
+        <div class="b">1</div>
+        <h4>Send one message</h4>
+        <p>Tell us roughly how many students you have and what your calendar looks like. That's the whole ask.</p>
+      </div>
+      <div class="step">
+        <div class="b">2</div>
+        <h4>Hear back from us</h4>
+        <p>A person reads every message and replies with dates that could work.</p>
+      </div>
+      <div class="step">
+        <div class="b">3</div>
+        <h4>We show up and run it</h4>
+        <p>We work out the details together before anything is locked in. Then we arrive with the kits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT KIDS BUILD ============ -->
+<section class="pad fun" id="build">
+  <div class="wrap">
+    <div class="build-head">
+    <div class="sec-head rv">
+      <span class="kicker">For students</span>
+      <h2>So… what do you get to build?</h2>
+      <p>First you learn the parts. Then you pick a project and wire it yourself. These are the kinds of things students design with the kit: a microcontroller, a breadboard, a handful of sensors, and motors.</p>
+    </div>
+    <div class="board-card rv">
       
       <div class="board">
         <svg class="board-illustration" viewBox="0 0 400 210" aria-hidden="true" focusable="false">
@@ -699,114 +334,6 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
       <div class="code-strip"><span class="k">while</span> True: led.<span class="s">toggle</span>()  <span class="cmt"># it blinks because you coded it</span></div>
       <p class="board-note">Raspberry Pi, breadboard, sensors, and wires — different projects, same foundation.</p>
     </div>
-  </div>
-</section>
-
-<!-- ============ TWO DOORS ============ -->
-<section class="split">
-  <div class="wrap" style="margin-bottom:22px">
-    <p class="rv" style="font-family:var(--font-mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#a8bcd4;font-weight:700">Start where you fit</p>
-  </div>
-  <div class="wrap split-grid">
-    <a class="door rv" href="#schools">
-      <span class="glow"></span>
-      <span class="tag"><svg class="ic" aria-hidden="true"><use href="#ic-school"/></svg> For school administrators</span>
-      <h3>What hosting actually takes</h3>
-      <p class="who">Principals · Teachers · Program &amp; district directors</p>
-      <p>Short version: a room, some outlets, and a group of students. We deliberately kept it that way. No technical background required from anyone on your staff.</p>
-      <ul>
-        <li>No budget line, no purchase order, no equipment to buy</li>
-        <li>No staff member needs a technical background</li>
-        <li>Three blocks of time that fit your existing calendar</li>
-      </ul>
-      <span class="btn btn-ghost btn-sm">See the logistics →</span>
-    </a>
-
-    <a class="door kids rv" href="#build">
-      <span class="glow"></span>
-      <span class="tag"><svg class="ic" aria-hidden="true"><use href="#ic-student"/></svg> For students</span>
-      <h3>Stuff you get to build</h3>
-      <p class="who">Grades 6–12 · No experience needed</p>
-      <p>Motion alarms. Plant waterers. Reaction-time games. Things that move when the world around them changes.</p>
-      <ul>
-        <li>Design and wire your own project in session two</li>
-        <li>Show it off and explain how it works in session three</li>
-        <li>Design your own project, not one out of a kit</li>
-      </ul>
-      <span class="btn btn-primary btn-sm">See the projects →</span>
-    </a>
-  </div>
-</section>
-
-<!-- ============ SCHOOLS / ADMIN ============ -->
-<section class="pad light" id="schools">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="kicker">For administrators</span>
-      <h2>It takes less than you might think.</h2>
-      <p>We take care of the parts that need equipment and know-how. You take care of the room and the calendar. That is genuinely most of it.</p>
-    </div>
-
-    <div class="brings">
-      <div class="bring you rv">
-        <h3>We bring</h3>
-        <p class="sub">Everything that needs money or expertise.</p>
-        <ul>
-          <li><span class="check">✓</span> Hardware kits, including breadboard, sensors, motors, and wiring</li>
-          <li><span class="check">✓</span> The full curriculum and all teaching material</li>
-          <li><span class="check">✓</span> Instructors who have built this hardware themselves</li>
-          <li><span class="check">✓</span> Three instructors per session, alongside your staff and proctors</li>
-          <li><span class="check">✓</span> Everything needed for the session-three showcase and awards</li>
-        </ul>
-      </div>
-
-      <div class="bring rv">
-        <h3>You bring</h3>
-        <p class="sub">Nothing you have to buy.</p>
-        <ul>
-          <li><span class="check">✓</span><span><b>A room with tables.</b> Space to spread out, and outlets we can reach.</span></li>
-          <li><span class="check">✓</span><span><b>Computers students can code on.</b> We work within whatever your district's devices already allow, including locked-down Chromebooks. Tell us your setup during scheduling and we adapt to it.</span></li>
-          <li><span class="check">✓</span><span><b>One adult from your team in the room.</b> No technical background needed.</span></li>
-          <li><span class="check">✓</span><span><b>Three blocks of time.</b> Scheduled around your calendar, not ours.</span></li>
-          <li><span class="check">✓</span><span><b>A way to tell students it's happening.</b> An announcement or a mention in class is plenty.</span></li>
-        </ul>
-        <div class="price-callout">
-          <div class="price-figure" aria-hidden="true"><span class="cur">$</span>0</div>
-          <div class="price-copy">
-            <b>Free. Actually free.</b>
-            <p>Nobody pays anything. Not the school, not the students, not their families.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="steps rv">
-      <div class="step">
-        <div class="b">1</div>
-        <h4>Send one message</h4>
-        <p>Tell us roughly how many students you have and what your calendar looks like. That's the whole ask.</p>
-      </div>
-      <div class="step">
-        <div class="b">2</div>
-        <h4>Get a real reply</h4>
-        <p>A person reads every message. You get real dates and an honest yes or no, not a brochure.</p>
-      </div>
-      <div class="step">
-        <div class="b">3</div>
-        <h4>We show up and run it</h4>
-        <p>We work out the details together before anything is locked in. Then we arrive with the kits.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHAT KIDS BUILD ============ -->
-<section class="pad fun" id="build">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="kicker">For students</span>
-      <h2>So… what do you actually get to build?</h2>
-      <p>Session one you learn the parts. Session two you pick a project and wire it yourself. These are the kinds of things students design with the kit: a microcontroller, a breadboard, a handful of sensors, and motors.</p>
     </div>
 
     <div class="proj-grid">
@@ -872,40 +399,40 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
       </div>
       <div class="unlock rv">
         <div class="num">03</div>
-        <h4>Understanding how computers actually work</h4>
+        <h4>Understanding how computers work</h4>
         <p>Students leave understanding computers at a fundamental level, and how to use that knowledge to build their own hardware and software projects.</p>
+      </div>
+      <div class="unlock rv">
+        <div class="num">04</div>
+        <h4>A certificate</h4>
+        <p>Every student who completes the workshop earns a certificate of completion, presented in front of their families at the showcase. Something real to add to a resume or application.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PROGRAM / 3 SESSIONS ============ -->
+<!-- ============ PROGRAM / 1-DAY & 2-DAY FORMATS ============ -->
 <section class="pad light" id="program">
   <div class="wrap">
     <div class="sec-head rv">
       <span class="kicker">The program</span>
-      <h2>Three sessions. Ten hours. A kit for every student.</h2>
-      <p>Here is the whole thing: what gets taught, and what happens in each session.</p>
+      <h2>One day or two. A kit for every student.</h2>
+      <p>Pick the format that fits your calendar. Both cover the same foundation; two days gives students time to design their own project.</p>
     </div>
 
-    <div class="sessions rv">
+    <div class="sessions two rv">
       <div class="session">
         <span class="strip"></span>
-        <div class="n">Session 01</div>
-        <h4>Fundamentals</h4>
-        <p>What a computer actually is, then an introduction to microcontrollers, breadboards, and a set of sensors and motors. Everyone gets hands on the hardware in session one.</p>
+        <div class="n">1-Day Workshop</div>
+        <h4>The fast start</h4>
+        <p>One day, start to finish. Students learn what a computer is, get hands on a microcontroller, breadboard, sensors, and motors, then wire and code a working project of their own before they leave. It ends with a short demo.</p>
       </div>
       <div class="session">
         <span class="strip"></span>
-        <div class="n">Session 02</div>
-        <h4>Design and wire your own</h4>
-        <p>Students design and wire their own project. Instructors are told to guide rather than solve, even when solving would be faster for everyone in the room.</p>
-      </div>
-      <div class="session">
-        <span class="strip"></span>
-        <div class="n">Session 03</div>
-        <h4>Showcase and awards</h4>
-        <p>Students present what they made and explain how it works, in front of the room, to people who did not build it.</p>
+        <div class="n">2-Day Workshop</div>
+        <h4>Build your own</h4>
+        <p><b>Day 1, fundamentals:</b> computers, microcontrollers, breadboards, and a set of sensors and motors, with everyone hands-on from the start.</p>
+        <p style="margin-top:10px"><b>Day 2, design and showcase:</b> students design and wire their own project, then present it and explain how it works. Instructors guide rather than solve. Awards to close.</p>
       </div>
     </div>
   </div>
@@ -917,7 +444,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
     <div class="sec-head rv">
       <span class="kicker">Why we exist</span>
       <h2>Most students never touch the hardware side of STEM.</h2>
-      <p>School computing has largely settled on software: simple block, then Python, then maybe a robotics club with a fixed kit. But there's a whole other side of computing students rarely get to experience. The physical layer underneath, where a sensor reading triggers a decision and becomes a moving part, is where a lot of students would actually catch fire. It also needs equipment, a curriculum, and someone in the room who has wired a circuit before. That's why we're here.</p>
+      <p>School computing has largely settled on software: simple block, then Python, then maybe a robotics club with a fixed kit. But there's a whole other side of computing students rarely get to experience. The physical layer underneath, where a sensor reading triggers a decision and becomes a moving part, is where a lot of students find what they love. It also needs equipment, a curriculum, and someone in the room who has wired a circuit before. That's why we're here.</p>
     </div>
     <div class="prob-grid">
       <div class="prob rv">
@@ -926,7 +453,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
       </div>
       <div class="prob rv">
         <h4>Then there's the knowledge gap</h4>
-        <p>Most computer science certifications do not cover the hardware side of computing, so students often don't have the time to learn the material on their own.</p>
+        <p>Most computer science classes don't cover the hardware side of computing, and learning it alone takes time and guidance most students don't have.</p>
       </div>
       <div class="prob rv">
         <h4>So most students never get the chance</h4>
@@ -937,17 +464,93 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
 </section>
 
 <!-- ============ ABOUT ============ -->
-<!-- ============ TRACK RECORD / 2021 PILOT ============ -->
+<!-- ============ A DAY IN THE LIFE ============ -->
 <section class="pad light" id="track">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="kicker">Track record</span>
-      <h2>We have run this before.</h2>
-      <p>In 2021, our founder, Ronith Balusani, opened a Raspberry Pi summer program for his entire grade. Thirty students signed up and the program ran for seven weeks that summer, with families rearranging their schedules around it rather than dropping out.</p>
+      <span class="kicker">A day in the life</span>
+      <h2>What a workshop day looks like.</h2>
+      <p>From the moment students walk in to the moment they show their families what they built. Here is how a day with STEMBeginsHere runs.</p>
     </div>
 
-    <h3 class="rv" style="font-family:var(--font-display);font-size:1.25rem;margin:44px 0 6px">What the participants' parents said about the program</h3>
-    <p class="rv" style="color:var(--ink-soft);font-size:.95rem;margin-bottom:22px">Shared without names at the families' privacy.</p>
+
+    <div class="steps four rv">
+      <div class="step"><div class="b">1</div><h4>Meet the kit</h4><p>Every student gets a microcontroller, breadboard, sensors, and wires. We start with how a computer works.</p></div>
+      <div class="step"><div class="b">2</div><h4>Wire a first circuit</h4><p>Hands on the hardware within the first hour. The LED blinks because you coded it.</p></div>
+      <div class="step"><div class="b">3</div><h4>Build and debug</h4><p>Students design their own project. Instructors guide rather than solve, even when solving would be faster.</p></div>
+      <div class="step"><div class="b">4</div><h4>Show it off</h4><p>Students present what they built to their families and explain how it works. Certificates to close.</p></div>
+    </div>
+    <h3 class="recap-title rv" style="margin-top:44px">Inside the room.</h3>
+    <div class="gallery rv">
+      <figure class="photo big"><img src="images/workshop/building-together.jpg" alt="Two middle school students working side by side on a breadboard circuit wired to a Raspberry Pi Pico" width="1600" height="1200" loading="lazy"><figcaption>Day 1: first circuits on the breadboard</figcaption></figure>
+      <figure class="photo tall"><img src="images/workshop/hands-up.jpg" alt="Students at a table with laptops and breadboards, one raising a hand to ask a question" width="1200" height="1600" loading="lazy"><figcaption>Questions welcome, always</figcaption></figure>
+      <figure class="photo tall"><img src="images/workshop/first-circuit.jpg" alt="A student holding up her wired breadboard to inspect it" width="360" height="640" loading="lazy"><figcaption>Checking the wiring</figcaption></figure>
+      <figure class="photo wide"><img src="images/workshop/mentor-debugging.jpg" alt="A group of students and an adult gathered around a laptop and breadboard, testing a project" width="1600" height="1200" loading="lazy"><figcaption>Testing a project together</figcaption></figure>
+      <figure class="photo wide"><img src="images/workshop/showcase-families.jpg" alt="Two parents watch as a student demonstrates his breadboard project" width="1600" height="900" loading="lazy"><figcaption>Day 2: showing families what they built</figcaption></figure>
+      <figure class="photo wide"><img src="images/workshop/showcase-demo.jpg" alt="Our founder helps a student and his family walk through code on a laptop during the showcase" width="1600" height="900" loading="lazy"><figcaption>Showcase: walking through the code</figcaption></figure>
+      <figure class="photo wide"><img src="images/workshop/group-day1.jpg" alt="Students and our two instructors together in front of the Bootcamp Day 1 screen" width="1800" height="1350" loading="lazy"><figcaption>The Day 1 crew</figcaption></figure>
+      <figure class="photo wide"><img src="images/workshop/proud-builders.jpg" alt="Two students smile next to the breadboard circuit they built" width="1600" height="1200" loading="lazy"><figcaption>First circuit: done</figcaption></figure>
+      <figure class="photo wide"><img src="images/workshop/instructor-demo.jpg" alt="An instructor shows students how a breadboard circuit is wired" width="1600" height="1200" loading="lazy"><figcaption>Showing how it's wired</figcaption></figure>
+      <figure class="photo wide"><img src="images/workshop/class-huddle.jpg" alt="Students gather around the whiteboard during a lesson" width="1600" height="1200" loading="lazy"><figcaption>Huddle at the whiteboard</figcaption></figure>
+      <figure class="photo wide"><img src="images/workshop/table-mentoring.jpg" alt="An instructor points out a detail while students work at their table" width="1600" height="1200" loading="lazy"><figcaption>Help at every table</figcaption></figure>
+    </div>
+
+    <h3 class="recap-title rv" style="margin-top:44px">Graduation day.</h3>
+    <div class="grad-day rv">
+      <figure class="video"><video controls playsinline preload="none" poster="images/videos/showcase-demo-poster.jpg"><source src="images/videos/showcase-demo.mp4" type="video/mp4">Your browser can't play this video.</video><figcaption>Showcase: a student demonstrates his project</figcaption></figure>
+      <figure class="photo"><img src="images/workshop/closing-ceremony.jpg" alt="Families and students fill the auditorium for the closing ceremony" width="1600" height="1200" loading="lazy"><figcaption>Families filled the auditorium for the closing ceremony</figcaption></figure>
+    </div>
+    <div class="cert-wall rv">
+      <figure class="photo"><img src="images/workshop/certificates/graduate-01.jpg" alt="A student in a green shirt holds his certificate on stage beside the two instructors" loading="lazy" width="1000" height="750"></figure>
+      <figure class="photo"><img src="images/workshop/certificates/graduate-02.jpg" alt="A student stands with her certificate beside the instructors" loading="lazy" width="1000" height="750"></figure>
+      <figure class="photo"><img src="images/workshop/certificates/graduate-03.jpg" alt="A student receives her certificate on stage" loading="lazy" width="1000" height="750"></figure>
+      <figure class="photo"><img src="images/workshop/certificates/graduate-04.jpg" alt="A student holds up her certificate" loading="lazy" width="1000" height="750"></figure>
+      <figure class="photo"><img src="images/workshop/certificates/graduate-05.jpg" alt="A student is handed his certificate" loading="lazy" width="1000" height="750"></figure>
+      <figure class="photo"><img src="images/workshop/certificates/graduate-06.jpg" alt="A student holds up his certificate on stage" loading="lazy" width="1000" height="750"></figure>
+      <figure class="photo"><img src="images/workshop/certificates/graduate-07.jpg" alt="A student with his certificate beside the instructors" loading="lazy" width="1000" height="750"></figure>
+      <figure class="photo"><img src="images/workshop/certificates/graduate-08.jpg" alt="A student poses with his certificate" loading="lazy" width="1000" height="750"></figure>
+      <figure class="photo"><img src="images/workshop/certificates/graduate-09.jpg" alt="A student walks off stage with his certificate" loading="lazy" width="1000" height="750"></figure>
+      <figure class="photo"><img src="images/workshop/certificates/graduate-10.jpg" alt="A student in a red shirt holds up a certificate" loading="lazy" width="1000" height="750"></figure>
+      <figure class="photo"><img src="images/workshop/certificates/graduate-11.jpg" alt="A student walks up to receive his certificate" loading="lazy" width="1000" height="750"></figure>
+    </div>
+
+    <h3 class="rv" style="font-family:var(--font-display);font-size:1.25rem;margin:44px 0 6px">What students said</h3>
+    <p class="rv" style="color:var(--ink-soft);font-size:.95rem;margin-bottom:22px">In their own words. Shared without names.</p>
+    <div class="vid-grid rv">
+      <figure class="video"><video controls playsinline preload="none" poster="images/videos/student-day1-b-poster.jpg"><source src="images/videos/student-day1-b.mp4" type="video/mp4">Your browser can't play this video.</video><figcaption>Student · Day 1</figcaption></figure>
+      <figure class="video"><video controls playsinline preload="none" poster="images/videos/student-day1-c-poster.jpg"><source src="images/videos/student-day1-c.mp4" type="video/mp4">Your browser can't play this video.</video><figcaption>Student · Day 1</figcaption></figure>
+      <figure class="video"><video controls playsinline preload="none" poster="images/videos/student-day1-d-poster.jpg"><source src="images/videos/student-day1-d.mp4" type="video/mp4">Your browser can't play this video.</video><figcaption>Student · Day 1</figcaption></figure>
+    </div>
+    <div class="voices two">
+      <figure class="voice rv">
+        <blockquote>I learned how to use the breadboard and how to do coding. I do want to come back next Saturday.</blockquote>
+        <figcaption>Student · end of Day 1</figcaption>
+      </figure>
+      <figure class="voice rv">
+        <blockquote>I had really fun during this tech program. I learned what short circuits were, and I was able to make my own piece.</blockquote>
+        <figcaption>Student · end of Day 1</figcaption>
+      </figure>
+      <figure class="voice rv">
+        <blockquote>I'm really glad for this experience, and I hope to learn more.</blockquote>
+        <figcaption>Student · on the workshop</figcaption>
+      </figure>
+      <figure class="voice rv">
+        <blockquote>My goal was to learn how to do advanced coding, and eventually make that work, like I did.</blockquote>
+        <figcaption>Student · on what they set out to do</figcaption>
+      </figure>
+      <figure class="voice rv">
+        <blockquote>When you turn them on, in Morse code, they can flash SOS and you can leave a trail behind, just in case you get lost in the woods.</blockquote>
+        <figcaption>Student · pitching a project idea</figcaption>
+      </figure>
+      <figure class="voice rv">
+        <blockquote>Probably learn how to code and work for NASA. That would be really fun.</blockquote>
+        <figcaption>Student · on what's next</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="rv" style="font-family:var(--font-display);font-size:1.25rem;margin:44px 0 6px">Where it started</h3>
+    <p class="rv" style="color:var(--ink-soft);font-size:1rem;max-width:70ch;margin-bottom:10px">In 2021, our founder, Ronith Balusani, opened a Raspberry Pi summer program for his entire grade. Thirty students signed up and the program ran for seven weeks, with families rearranging their schedules around it rather than dropping out. Here is what those parents said.</p>
+    <p class="rv" style="color:var(--ink-soft);font-size:.95rem;margin-bottom:22px">Shared without names to protect families' privacy.</p>
 
     <div class="voices">
       <figure class="voice rv">
@@ -980,15 +583,18 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
     <div class="sec-head rv">
       <span class="kicker">About us</span>
       <h2>Built by people who wished this had existed.</h2>
-      <p>STEM Begins Here is an Arizona nonprofit that puts real hardware in front of students in grades 6 to 12, because the gap between wanting to build something and knowing how to start is mostly a matter of access.</p>
+      <p>STEMBeginsHere is an Arizona nonprofit that puts real hardware in front of students in grades 6 to 12, because the gap between wanting to build something and knowing how to start is mostly a matter of access.</p>
     </div>
 
+    <div class="quote-row">
+      <figure class="photo"><img src="images/workshop/founder-teaching.jpg" alt="Ronith Balusani, founder, teaching the class in front of a slide about a tilt switch" width="1200" height="1600" loading="lazy"><figcaption>Ronith teaching a session</figcaption></figure>
     <div class="quote rv">
       <p>I started creating hardware engineering projects at 8 years old, but I found it very frustrating that there were no easy ways to access courses which gave a strong breakdown of the fundamentals of hardware engineering. I wanted to create a program that would give students the opportunity to learn about hardware engineering in a hands-on way, and to inspire them to solve problems in their own lives and across different fields with technology.</p>
       <div class="by">
         <span class="av">RB</span>
         <span><b>Ronith Balusani</b><span>Founder &amp; Lead Instructor · teaching hardware since 2021</span></span>
       </div>
+    </div>
     </div>
 
     <div style="height:38px"></div>
@@ -1007,12 +613,12 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
     </div>
 
     <div style="height:38px"></div>
+    <figure class="photo photo-band rv"><img src="images/workshop/instructors.jpg" alt="Our two instructors in suits in front of the Bootcamp Day 1 screen" width="1600" height="1200" loading="lazy" style="object-position:50% 45%"><figcaption>Our instructors, ready for day one</figcaption></figure>
     <h3 style="font-family:var(--font-display);color:#fff;font-size:1.3rem" class="rv">Who's behind it</h3>
-    <p style="color:#b3c5da;font-size:.95rem;margin-top:6px" class="rv">A small, founder-led team, with a board of directors behind it.</p>
+    <p style="color:#b3c5da;font-size:.95rem;margin-top:6px" class="rv">A small, founder-led team, supported by volunteer instructors.</p>
     <div class="team">
       <div class="person rv"><span class="av">RB</span><b>Ronith Balusani</b><span>Founder &amp; Lead Instructor</span></div>
-      <div class="person rv"><span class="av">SS</span><b>Samkit Shah</b><span>Outreach Lead</span></div>
-      <div class="person rv"><span class="av">SD</span><b>Soham Das</b><span>Operations Lead</span></div>
+      <div class="person rv"><span class="av">SS</span><b>Samkit Shah</b><span>Instructor</span></div>
     </div>
   </div>
 </section>
@@ -1023,13 +629,13 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
     <div class="sec-head rv">
       <span class="kicker">FAQ</span>
       <h2>Questions, answered straight.</h2>
-      <p>If something you need is not here, ask us directly and we will give you a real answer rather than a maybe.</p>
+      <p>If something you need is not here, ask us directly.</p>
     </div>
 
     <div class="faq" id="faqlist">
       <div class="q">
-        <button aria-expanded="false">What does a session actually look like?<span class="plus">+</span></button>
-        <div class="a"><p>Three sessions, ten hours total. Session one covers fundamentals, from defining computers to introducing microcontrollers, breadboards, and a set of sensors and motors. Session two is when students design and wire their own project. Session three is when students showcase their projects, explaining what they made and how it works.</p></div>
+        <button aria-expanded="false">What does a workshop look like?<span class="plus">+</span></button>
+        <div class="a"><p>We offer one-day and two-day workshops. In a two-day workshop, day one covers fundamentals, from defining computers to introducing microcontrollers, breadboards, and a set of sensors and motors. Day two is when students design and wire their own project, then showcase it, explaining what they made and how it works. The one-day workshop covers the fundamentals and a hands-on build in a single day.</p></div>
       </div>
       <div class="q">
         <button aria-expanded="false">What age range is it for, and does anyone need experience?<span class="plus">+</span></button>
@@ -1037,15 +643,15 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
       </div>
       <div class="q">
         <button aria-expanded="false">What does it cost?<span class="plus">+</span></button>
-        <div class="a"><p>Nothing. STEM Begins Here brings the kits, the curriculum, and the instructors. Nobody pays anything. Not the school, and not the students or their families.</p></div>
+        <div class="a"><p>Nothing. STEMBeginsHere brings the kits, the curriculum, and the instructors. Nobody pays anything. Not the school, and not the students or their families.</p></div>
       </div>
       <div class="q">
         <button aria-expanded="false">What do you need from us?<span class="plus">+</span></button>
-        <div class="a"><p>Tables, outlets, computers the students can write code on, someone from your side in the room, and three blocks of time.</p></div>
+        <div class="a"><p>Tables, outlets, computers the students can write code on, someone from your side in the room, and one or two days on your calendar.</p></div>
       </div>
       <div class="q">
         <button aria-expanded="false">How many students, and who is watching them?<span class="plus">+</span></button>
-        <div class="a"><p>We can accommodate 20–25 students per bootcamp. Each session has 3 instructors, as well as school staff and proctors.</p></div>
+        <div class="a"><p>We can accommodate 20–25 students per workshop. Each workshop has 3 instructors, as well as school staff and proctors.</p></div>
       </div>
       <div class="q">
         <button aria-expanded="false">Do our teachers need a technical background?<span class="plus">+</span></button>
@@ -1054,72 +660,54 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
     </div>
 
     <p style="margin-top:26px;color:var(--ink-soft);font-size:.97rem">
-      <b style="color:var(--ink)">Something not covered?</b> Send the question over. If we do not know the answer yet we will say so rather than improvise one.
-      <a href="#contact" style="color:#0e7490;font-weight:600;text-decoration:underline">Ask us directly →</a>
+      <b style="color:var(--ink)">Something not covered?</b> Send us your question and we'll get back to you.
+      <a href="contact.html" style="color:#0e7490;font-weight:600;text-decoration:underline">Ask us directly →</a>
     </p>
   </div>
 </section>
 
-<!-- ============ CONTACT ============ -->
-<section class="pad" id="contact">
+<!-- ============ GET INVOLVED ============ -->
+<section class="pad" id="involved" style="background:linear-gradient(180deg,var(--navy-800),var(--navy-900))">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="kicker">Get in touch</span>
-      <h2>Book your session today.</h2>
-      <p>We are striving to bring excellence to each school for STEM fields. The first groups through the door will shape this program. Contact us with information about your students and available dates, and we can do the rest.</p>
+      <span class="kicker">Get involved</span>
+      <h2>More students, more schools. That takes more of us.</h2>
+      <p>Every workshop needs instructors, kits, and a room. If you can give any of those, there is a place for you here.</p>
     </div>
-
-    <div class="contact-grid">
-      <div>
-        <div class="ways">
-          <div class="way rv">
-            <h4>Host a bootcamp</h4>
-            <p>Schools, libraries, clubs, after-school programs. Tell us roughly how many students and what your calendar looks like, and we will tell you honestly whether we can do it justice.</p>
-          </div>
-          <div class="way rv">
-            <h4>Everything else</h4>
-            <p>Parents, students, teachers, or anyone with a question about how this works. There is no wrong reason to write.</p>
-          </div>
-        </div>
-        <h4 style="font-family:var(--font-display);color:#fff;font-size:1.05rem">What happens next</h4>
-        <ul class="next">
-          <li><span class="n">01</span> We read the email within a few days</li>
-          <li><span class="n">02</span> You get a real reply with real dates, not a brochure</li>
-          <li><span class="n">03</span> We work out the details together before anything is locked in</li>
-        </ul>
-        <p style="margin-top:24px;color:#b3c5da;font-size:.93rem">Or email us directly at <a href="mailto:stembeginshere@gmail.com" style="color:var(--lime);font-weight:600">stembeginshere@gmail.com</a></p>
-      </div>
-
-      <form class="rv" id="contactForm" novalidate>
-        <div class="field"><label for="n">Name</label><input id="n" name="name" required></div>
-        <div class="field"><label for="e">Email</label><input id="e" name="email" type="email" required></div>
-        <div class="field"><label for="o">School or organization <span style="color:#a8bcd4;font-weight:400">(optional)</span></label><input id="o" name="org"></div>
-        <div class="field"><label for="r">I am reaching out about</label>
-          <select id="r" name="reason" required>
-            <option value="">Select one</option>
-            <option>Hosting a bootcamp</option>
-            <option>Volunteering</option>
-            <option>A question as a parent or student</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div class="field"><label for="m">Message</label><textarea id="m" name="message" required></textarea></div>
-        <button class="btn btn-primary" type="submit" style="justify-content:center">Send message</button>
-        <p class="priv">We use your details to reply and nothing else. No list, no sharing.</p>
-        <p id="formNote" style="display:none;color:var(--lime);font-weight:600;font-size:.93rem"></p>
-      </form>
+    <div class="involve-grid">
+      <a class="involve rv" href="volunteer.html">
+        <span class="glow"></span>
+        <span class="icon">🙋</span>
+        <h3>Volunteer at a workshop</h3>
+        <p>Help students wire their first circuit, prep kits, or run logistics on the day. No teaching experience needed.</p>
+        <span class="btn btn-ghost btn-sm">Volunteer with us →</span>
+      </a>
+      <a class="involve rv" href="clubs.html">
+        <span class="glow"></span>
+        <span class="icon">🛠️</span>
+        <h3>Run a club</h3>
+        <p>We're launching a clubs program for organizations and individuals, with training, manuals, and curriculum. Apply to be one of the first.</p>
+        <span class="btn btn-primary btn-sm">Start a club →</span>
+      </a>
+      <a class="involve rv" href="donate.html">
+        <span class="glow"></span>
+        <span class="icon">💛</span>
+        <h3>Donate</h3>
+        <p>Money, equipment, a space to meet, or your time and expertise. Every kind of gift keeps this free for schools.</p>
+        <span class="btn btn-ghost btn-sm">Ways to give →</span>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- ============ BIG CTA ============ -->
-<section style="padding:0 0 84px">
+<section style="padding:0 0 84px" id="contact">
   <div class="wrap">
     <div class="cta rv">
       <h2>A room, some outlets, and a group of students.</h2>
-      <p>That's close to the whole of it. We handle the rest, and the students leave with something they built themselves.</p>
+      <p>We handle the rest, and the students leave with something they built themselves.</p>
       <div class="hero-btns">
-        <a class="btn btn-dark" href="#contact">Start a conversation →</a>
+        <a class="btn btn-dark" href="contact.html">Start a conversation →</a>
         <a class="btn btn-outline" href="#faq">Read the FAQ</a>
       </div>
     </div>
@@ -1144,16 +732,28 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
           <li><a href="#unlocks">Outcomes</a></li>
           <li><a href="#program">The Program</a></li>
           <li><a href="#why">Why We Exist</a></li>
-          <li><a href="#track">Track Record</a></li>
+          <li><a href="#track">A Day in the Life</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#faq">FAQ</a></li>
+          <li><a href="#involved">Get Involved</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get involved</h5>
+        <ul>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="clubs.html">Run a club</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="press.html">Press &amp; media</a></li>
         </ul>
       </div>
       <div>
         <h5>Contact</h5>
         <ul>
           <li><a href="mailto:stembeginshere@gmail.com">stembeginshere@gmail.com</a></li>
-          <li><a href="#contact">Get in touch</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+          <li><a href="media-policy.html">Media policy</a></li>
         </ul>
       </div>
     </div>
@@ -1164,82 +764,6 @@ footer{border-top:1px solid var(--line);padding:52px 0 32px;background:var(--nav
   </div>
 </footer>
 
-<script>
-(function(){
-  // --- mobile nav ---
-  var burger = document.getElementById('burger');
-  var links = document.getElementById('navlinks');
-  burger.addEventListener('click', function(){
-    var open = links.classList.toggle('show');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  links.addEventListener('click', function(e){
-    if(e.target.tagName === 'A') links.classList.remove('show');
-  });
-
-  // --- FAQ accordion ---
-  document.querySelectorAll('#faqlist .q').forEach(function(q){
-    var btn = q.querySelector('button');
-    var a = q.querySelector('.a');
-    btn.addEventListener('click', function(){
-      var open = q.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      a.style.maxHeight = open ? a.scrollHeight + 'px' : 0;
-    });
-  });
-
-  // --- reveal on scroll ---
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
-    });
-  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.rv').forEach(function(el, i){
-    el.style.transitionDelay = (Math.min(i % 4, 3) * 70) + 'ms';
-    io.observe(el);
-  });
-
-  // --- hero LED chase ---
-  var leds = Array.prototype.slice.call(document.querySelectorAll('#leds .led'));
-  var i = 0;
-  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    setInterval(function(){
-      leds.forEach(function(l){ l.classList.remove('on'); });
-      leds[i].classList.add('on');
-      leds[(i+1) % leds.length].classList.add('on');
-      i = (i+1) % leds.length;
-    }, 420);
-  } else {
-    leds.forEach(function(l){ l.classList.add('on'); });
-  }
-
-  // --- keep anchor jumps clear of the sticky header ---
-  function sizeBar(){
-    var navH = document.querySelector('header.nav').offsetHeight || 68;
-    document.documentElement.style.scrollPaddingTop = (navH + 14) + 'px';
-  }
-  sizeBar();
-  window.addEventListener('resize', sizeBar);
-  window.addEventListener('load', sizeBar);
-  if(document.fonts && document.fonts.ready) document.fonts.ready.then(sizeBar);
-
-  // --- contact form (front-end only; wire to your backend/Formspree) ---
-  var form = document.getElementById('contactForm');
-  var note = document.getElementById('formNote');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if(!form.checkValidity()){
-      note.style.display='block';
-      note.style.color='var(--coral)';
-      note.textContent = 'Please fill in name, email, reason, and message.';
-      return;
-    }
-    note.style.display='block';
-    note.style.color='var(--lime)';
-    note.textContent = 'Thanks, a person reads every message. Expect a real reply within a few days.';
-    form.reset();
-  });
-})();
-</script>
+<script src="assets/site.js?v=11"></script>
 </body>
 </html>
