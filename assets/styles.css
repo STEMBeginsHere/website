@@ -906,3 +906,8 @@ fieldset.field legend{font-size:.84rem;font-weight:600;color:#b9c8dc;margin-bott
 /* team: center the cards */
 .team{display:flex;flex-wrap:wrap;justify-content:center}
 .team .person{flex:0 1 320px}
+
+/* center a lone last quote card in the two-column student quotes */
+@media (min-width:961px){
+  .voices.two > .voice:last-child:nth-child(odd){grid-column:1 / -1;justify-self:center;width:calc(50% - 9px)}
+}
